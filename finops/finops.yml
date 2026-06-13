@@ -1,0 +1,50 @@
+finops:
+  provider: Airlabs (Data Products LTD)
+  pricingUrl: https://airlabs.co/#Pricing
+  pricingModel: subscription
+  billingCycle: monthly
+  currency: USD
+  notes: Pricing is based on total monthly query volume across all API endpoints.
+    Each API call (regardless of endpoint) counts as one query against the monthly
+    allowance. No per-endpoint pricing distinctions are documented.
+
+  plans:
+    - name: Free
+      monthlyCost: 0.00
+      queryAllowance: null
+      costPerQuery: null
+      notes: Evaluation plan with limited results per request (50 max) and restricted
+        response fields. No credit card required.
+
+    - name: Starter
+      monthlyCost: 19.00
+      queryAllowance: 10000
+      costPerQuery: 0.0019
+      notes: Effective cost of $0.0019 per query. Suitable for low-volume prototypes
+        and internal tools.
+
+    - name: Growth
+      monthlyCost: 99.00
+      queryAllowance: 100000
+      costPerQuery: 0.00099
+      notes: Effective cost of ~$0.001 per query. Approximately 48% cheaper per
+        query than Starter tier.
+
+    - name: Scale
+      monthlyCost: 499.00
+      queryAllowance: 1000000
+      costPerQuery: 0.000499
+      notes: Effective cost of ~$0.0005 per query. Approximately 50% cheaper per
+        query than Growth tier. Best value for high-volume production applications.
+
+  costOptimizationTips:
+    - Use the _fields parameter to request only needed response fields, reducing
+      payload size without reducing query count.
+    - Use pagination with limit and offset to retrieve data in manageable batches
+      rather than fetching large datasets repeatedly.
+    - Cache static database responses (airports, airlines, cities) locally to avoid
+      repeated identical queries.
+    - Use the temporary signature authentication method in production to secure
+      the API key without additional cost.
+    - Monitor minute and hour sub-limits to avoid throttling errors that waste
+      query budget on retries.

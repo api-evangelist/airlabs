@@ -1,0 +1,187 @@
+name: Airlabs
+description: Aviation data REST API providing real-time flight status, schedules,
+  routes, airports, airlines, aircraft data, and delays from 250+ airlines and 3,500+
+  airports worldwide. Built by Data Products LTD, the platform covers approximately
+  7,300 active flights at any given time.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/airlabs/refs/heads/main/apis.yml
+version: '0.19'
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Aviation
+  - Flights
+  - Airlines
+  - Airports
+  - Flight Tracking
+  - Flight Status
+  - Real-time Data
+apis:
+  - name: Airlabs Real-Time Flights API
+    description: Track live aircraft positions worldwide with latitude, longitude,
+      altitude, speed, direction, and flight identifiers. Supports filtering by bounding
+      box, airline, airport, aircraft registration, and flight number.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://airlabs.co/docs/flights
+    baseURL: https://airlabs.co/api/v9
+    tags:
+      - Real-time
+      - Flight Tracking
+      - Aircraft Position
+    properties:
+      - type: Documentation
+        url: https://airlabs.co/docs/flights
+  - name: Airlabs Airport Schedules API
+    description: Retrieve departure and arrival schedules for any airport including
+      flight status, terminal and gate information, estimated and actual times, and
+      delay information. Free tier limited to 50 results per request.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://airlabs.co/docs/schedules
+    baseURL: https://airlabs.co/api/v9
+    tags:
+      - Schedules
+      - Departures
+      - Arrivals
+    properties:
+      - type: Documentation
+        url: https://airlabs.co/docs/schedules
+  - name: Airlabs Flight Information API
+    description: Look up detailed information for a specific flight by IATA or ICAO
+      code, combining schedule data, real-time position, and aircraft specifications
+      into a single response for the closest matching flight.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://airlabs.co/docs/flight
+    baseURL: https://airlabs.co/api/v9
+    tags:
+      - Flight Information
+      - Flight Status
+    properties:
+      - type: Documentation
+        url: https://airlabs.co/docs/flight
+  - name: Airlabs Flight Delays API
+    description: Query flights exceeding a specified delay threshold (minimum 30 minutes)
+      filtered by departure or arrival direction, designed for airport transfer services
+      and flight delay compensation use cases. Supports up to 500 results per request.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://airlabs.co/docs/delays
+    baseURL: https://airlabs.co/api/v9
+    tags:
+      - Delays
+      - Flight Status
+      - Insurance
+    properties:
+      - type: Documentation
+        url: https://airlabs.co/docs/delays
+  - name: Airlabs Airports Database API
+    description: Access a comprehensive global airport database with IATA and ICAO
+      codes, coordinates, elevation, runway count, timezone, city and country data,
+      and social media profiles. Filter by IATA, ICAO, city, or country code.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://airlabs.co/docs/airports
+    baseURL: https://airlabs.co/api/v9
+    tags:
+      - Airports
+      - Database
+    properties:
+      - type: Documentation
+        url: https://airlabs.co/docs/airports
+  - name: Airlabs Airlines Database API
+    description: Look up airline information including IATA and ICAO codes, callsign,
+      country, fleet size, average fleet age, safety data including accidents and crashes
+      over the past 5 years, and IOSA certification status.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://airlabs.co/docs/airlines
+    baseURL: https://airlabs.co/api/v9
+    tags:
+      - Airlines
+      - Database
+    properties:
+      - type: Documentation
+        url: https://airlabs.co/docs/airlines
+  - name: Airlabs Routes Database API
+    description: Query airline routes between airports with departure and arrival times
+      in local and UTC, operating days of week, terminal information, flight duration,
+      and the last aircraft type used. Supports up to 500 results with pagination.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://airlabs.co/docs/routes
+    baseURL: https://airlabs.co/api/v9
+    tags:
+      - Routes
+      - Database
+    properties:
+      - type: Documentation
+        url: https://airlabs.co/docs/routes
+  - name: Airlabs Aircraft Fleet Database API
+    description: Access global aircraft fleet data with registration numbers, ICAO
+      hex codes, manufacturer serial numbers, aircraft type, engine count and type,
+      build year, age, and current airline operator. Optional geolocation fields available.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://airlabs.co/docs/fleets
+    baseURL: https://airlabs.co/api/v9
+    tags:
+      - Fleet
+      - Aircraft
+      - Database
+    properties:
+      - type: Documentation
+        url: https://airlabs.co/docs/fleets
+  - name: Airlabs Cities Database API
+    description: Retrieve city data including IATA city codes, coordinates, country,
+      timezone, population, and multilingual names. Enables destination mapping and
+      grouping airports into city clusters independently of airport data.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://airlabs.co/docs/cities
+    baseURL: https://airlabs.co/api/v9
+    tags:
+      - Cities
+      - Database
+    properties:
+      - type: Documentation
+        url: https://airlabs.co/docs/cities
+  - name: Airlabs NearBy Airports API
+    description: Find airports and cities closest to given latitude and longitude coordinates
+      within a specified kilometer radius, sorted by distance. Used for nearest-airport
+      lookup and smart assistant applications.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://airlabs.co/docs/nearby
+    baseURL: https://airlabs.co/api/v9
+    tags:
+      - Nearby
+      - Geolocation
+      - Airports
+    properties:
+      - type: Documentation
+        url: https://airlabs.co/docs/nearby
+  - name: Airlabs Name Suggestion API
+    description: Autocomplete airport, city, and country search queries in any language
+      and spelling variant. Returns matched airports, cities, and countries with IATA
+      codes, coordinates, timezone, and popularity metrics for travel application search
+      interfaces.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://airlabs.co/docs/suggest
+    baseURL: https://airlabs.co/api/v9
+    tags:
+      - Autocomplete
+      - Search
+      - Airports
+      - Cities
+    properties:
+      - type: Documentation
+        url: https://airlabs.co/docs/suggest
+common:
+  - type: Authentication
+    url: https://airlabs.co/docs
+  - type: Plans
+    url: https://airlabs.co/#Pricing
+  - type: Documentation
+    url: https://airlabs.co/docs
+  - type: PrivacyPolicy
+    url: https://airlabs.co/privacy-policy
+  - type: TermsOfService
+    url: https://airlabs.co/terms
+  - type: Status
+    url: https://airlabs.co/status
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,69 @@
+rateLimits:
+  - name: Minute Limit
+    description: Per-minute request cap enforced across all API endpoints. Exceeding
+      this limit returns a "minute_limit_exceeded" error response. Specific per-plan
+      values are not publicly disclosed by Airlabs.
+    period: minute
+    scope: account
+    errorCode: minute_limit_exceeded
+    notes: Contact Airlabs support for exact per-minute thresholds per plan.
+
+  - name: Hour Limit
+    description: Per-hour request cap enforced across all API endpoints. Exceeding
+      this limit returns an "hour_limit_exceeded" error response. Specific per-plan
+      values are not publicly disclosed by Airlabs.
+    period: hour
+    scope: account
+    errorCode: hour_limit_exceeded
+    notes: Contact Airlabs support for exact per-hour thresholds per plan.
+
+  - name: Monthly Query Limit
+    description: Monthly total query allowance tied to the subscription plan. Exceeding
+      the monthly cap returns a "month_limit_exceeded" error response.
+    period: monthly
+    scope: account
+    errorCode: month_limit_exceeded
+    tiers:
+      - plan: Free
+        limit: null
+        notes: Undisclosed; intended for evaluation only.
+      - plan: Starter
+        limit: 10000
+        notes: $19/month; resets each billing cycle.
+      - plan: Growth
+        limit: 100000
+        notes: $99/month; resets each billing cycle.
+      - plan: Scale
+        limit: 1000000
+        notes: $499/month; resets each billing cycle.
+
+  - name: Results Per Request Limit
+    description: Maximum number of records returned per API call on database endpoints
+      such as airports, airlines, routes, fleets, and schedules.
+    scope: request
+    tiers:
+      - plan: Free
+        limit: 50
+        notes: All database endpoints cap results at 50 per request.
+      - plan: Starter
+        limit: 500
+        notes: All database endpoints cap results at 500 per request.
+      - plan: Growth
+        limit: 500
+        notes: All database endpoints cap results at 500 per request.
+      - plan: Scale
+        limit: 500
+        notes: All database endpoints cap results at 500 per request.
+
+authentication:
+  - type: API Key
+    description: Pass the api_key parameter in the query string of every request.
+    parameterName: api_key
+    location: query
+    example: https://airlabs.co/api/v9/flights?api_key=YOUR_API_KEY
+
+  - type: Temporary Signature
+    description: Server-side computed signature for enhanced security. Format is
+      api_id:timestamp:md5(timestamp:api_key). Valid for 3 minutes from generation.
+    location: query
+    notes: Recommended for production environments to avoid exposing the raw API key.
