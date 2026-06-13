@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://airlabs.co/json-schema/airline",
+  "title": "Airline",
+  "description": "Airline database record with fleet and safety information",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "description": "Airline name" },
+    "iata_code": { "type": "string", "description": "Airline IATA code" },
+    "icao_code": { "type": "string", "description": "Airline ICAO code" },
+    "iata_prefix": { "type": "string", "description": "IATA accounting prefix" },
+    "iata_accounting": { "type": "string", "description": "IATA accounting code" },
+    "callsign": { "type": "string", "description": "Airline callsign" },
+    "country_code": { "type": "string", "description": "Country ISO 2 code" },
+    "hub_code": { "type": "string", "description": "Main hub airport IATA code" },
+    "fleet_size": { "type": "integer", "description": "Total fleet size" },
+    "fleet_average_age": { "type": "number", "description": "Average fleet age in years" },
+    "date_founded": { "type": "string", "description": "Year founded" },
+    "date_active": { "type": "string", "description": "Date airline became active" },
+    "status": { "type": "string", "description": "Airline status" },
+    "type": { "type": "string", "description": "Airline type (scheduled, charter, cargo)" }
+  }
+}

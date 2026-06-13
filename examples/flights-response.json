@@ -1,0 +1,42 @@
+{
+  "request": {
+    "lang": "en",
+    "currency": "USD",
+    "time": 0.123,
+    "id": "req_abc123",
+    "server": "ap1",
+    "host": "airlabs.co",
+    "pid": 12345,
+    "version": 9,
+    "method": "GET /api/v9/flights",
+    "params": {
+      "airline_iata": "AA"
+    }
+  },
+  "response": [
+    {
+      "hex": "A1B2C3",
+      "reg_number": "N123AA",
+      "flag": "US",
+      "lat": 40.6413,
+      "lng": -73.7781,
+      "alt": 10668,
+      "dir": 270.5,
+      "speed": 850,
+      "v_speed": 0.0,
+      "squawk": "1200",
+      "flight_number": "100",
+      "flight_iata": "AA100",
+      "flight_icao": "AAL100",
+      "dep_iata": "JFK",
+      "dep_icao": "KJFK",
+      "arr_iata": "LAX",
+      "arr_icao": "KLAX",
+      "airline_iata": "AA",
+      "airline_icao": "AAL",
+      "aircraft_icao": "B77W",
+      "updated": 1718236800,
+      "status": "en-route"
+    }
+  ]
+}

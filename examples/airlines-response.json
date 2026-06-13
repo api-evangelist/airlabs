@@ -1,0 +1,34 @@
+{
+  "request": {
+    "lang": "en",
+    "currency": "USD",
+    "time": 0.032,
+    "id": "req_jkl012",
+    "server": "ap1",
+    "host": "airlabs.co",
+    "pid": 12348,
+    "version": 9,
+    "method": "GET /api/v9/airlines",
+    "params": {
+      "iata_code": "AA"
+    }
+  },
+  "response": [
+    {
+      "name": "American Airlines",
+      "iata_code": "AA",
+      "icao_code": "AAL",
+      "iata_prefix": "001",
+      "iata_accounting": "001",
+      "callsign": "AMERICAN",
+      "country_code": "US",
+      "hub_code": "DFW",
+      "fleet_size": 862,
+      "fleet_average_age": 10.3,
+      "date_founded": "1926",
+      "date_active": "1934-04-15",
+      "status": "active",
+      "type": "scheduled"
+    }
+  ]
+}

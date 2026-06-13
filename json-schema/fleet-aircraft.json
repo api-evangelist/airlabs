@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://airlabs.co/json-schema/fleet-aircraft",
+  "title": "FleetAircraft",
+  "description": "Global aircraft fleet database record",
+  "type": "object",
+  "properties": {
+    "hex": { "type": "string", "description": "ICAO 24-bit address (hex)" },
+    "reg_number": { "type": "string", "description": "Aircraft registration number" },
+    "flag": { "type": "string", "description": "Country ISO 2 code" },
+    "airline_iata": { "type": "string", "description": "Airline IATA code" },
+    "airline_icao": { "type": "string", "description": "Airline ICAO code" },
+    "aircraft_iata": { "type": "string", "description": "Aircraft IATA type code" },
+    "aircraft_icao": { "type": "string", "description": "Aircraft ICAO type code" },
+    "model": { "type": "string", "description": "Aircraft model name" },
+    "manufacturer": { "type": "string", "description": "Aircraft manufacturer" },
+    "built_year": { "type": "integer", "description": "Year of manufacture" },
+    "first_flight_date": { "type": "string", "description": "Date of first flight (YYYY-MM-DD)" },
+    "engines_count": { "type": "integer", "description": "Number of engines" },
+    "engines_type": { "type": "string", "description": "Engine type (jet, turboprop, piston)" },
+    "plane_age": { "type": "number", "description": "Aircraft age in years" },
+    "plane_owner": { "type": "string", "description": "Aircraft owner" },
+    "plane_status": { "type": "string", "description": "Aircraft status (active, stored, etc.)" },
+    "msn": { "type": "string", "description": "Manufacturer serial number" },
+    "line_number": { "type": "string", "description": "Production line number" },
+    "num_seats": { "type": "integer", "description": "Number of seats" },
+    "rollout_date": { "type": "string", "description": "Rollout date (YYYY-MM-DD)" },
+    "delivery_date": { "type": "string", "description": "Delivery date (YYYY-MM-DD)" }
+  }
+}

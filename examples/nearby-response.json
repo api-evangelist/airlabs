@@ -1,0 +1,48 @@
+{
+  "request": {
+    "lang": "en",
+    "currency": "USD",
+    "time": 0.061,
+    "id": "req_mno345",
+    "server": "ap1",
+    "host": "airlabs.co",
+    "pid": 12349,
+    "version": 9,
+    "method": "GET /api/v9/nearby",
+    "params": {
+      "lat": 40.6413,
+      "lng": -73.7781,
+      "distance": 50
+    }
+  },
+  "response": [
+    {
+      "name": "John F Kennedy International Airport",
+      "iata_code": "JFK",
+      "icao_code": "KJFK",
+      "lat": 40.6413,
+      "lng": -73.7781,
+      "alt": 4,
+      "city": "New York",
+      "city_code": "NYC",
+      "country_code": "US",
+      "country": "United States",
+      "timezone": "America/New_York",
+      "distance": 0.0
+    },
+    {
+      "name": "LaGuardia Airport",
+      "iata_code": "LGA",
+      "icao_code": "KLGA",
+      "lat": 40.7772,
+      "lng": -73.8726,
+      "alt": 6,
+      "city": "New York",
+      "city_code": "NYC",
+      "country_code": "US",
+      "country": "United States",
+      "timezone": "America/New_York",
+      "distance": 16.2
+    }
+  ]
+}

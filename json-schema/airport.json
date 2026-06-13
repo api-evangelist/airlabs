@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://airlabs.co/json-schema/airport",
+  "title": "Airport",
+  "description": "Global airport database record",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "description": "Airport name" },
+    "iata_code": { "type": "string", "description": "Airport IATA code" },
+    "icao_code": { "type": "string", "description": "Airport ICAO code" },
+    "lat": { "type": "number", "description": "Latitude in decimal degrees" },
+    "lng": { "type": "number", "description": "Longitude in decimal degrees" },
+    "alt": { "type": "integer", "description": "Elevation in meters" },
+    "city": { "type": "string", "description": "City name" },
+    "city_code": { "type": "string", "description": "City IATA code" },
+    "un_locode": { "type": "string", "description": "UN/LOCODE" },
+    "timezone": { "type": "string", "description": "Timezone (tz database name)" },
+    "country_code": { "type": "string", "description": "Country ISO 2 code" },
+    "phone": { "type": "string", "description": "Airport phone number" },
+    "website": { "type": "string", "description": "Airport website URL" },
+    "popularity": { "type": "integer", "description": "Popularity rank" },
+    "is_major": { "type": "boolean", "description": "Whether this is a major airport" },
+    "slug": { "type": "string", "description": "URL-friendly slug" }
+  }
+}

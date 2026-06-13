@@ -1,0 +1,88 @@
+{
+  "vocabulary": {
+    "title": "Airlabs Aviation API Vocabulary",
+    "description": "Domain terms and concepts used across the Airlabs Aviation Data API",
+    "terms": [
+      {
+        "term": "IATA",
+        "definition": "International Air Transport Association — global trade association for airlines. IATA codes are 2-character identifiers for airlines (e.g., AA) and 3-character identifiers for airports (e.g., JFK)."
+      },
+      {
+        "term": "ICAO",
+        "definition": "International Civil Aviation Organization — UN agency. ICAO codes are 3-character identifiers for airlines (e.g., AAL) and 4-character identifiers for airports (e.g., KJFK)."
+      },
+      {
+        "term": "flight_iata",
+        "definition": "IATA flight identifier combining airline IATA code and flight number (e.g., AA100)."
+      },
+      {
+        "term": "flight_icao",
+        "definition": "ICAO flight identifier combining airline ICAO code and flight number (e.g., AAL100)."
+      },
+      {
+        "term": "hex",
+        "definition": "ICAO 24-bit transponder address in hexadecimal. Unique identifier assigned to each aircraft globally."
+      },
+      {
+        "term": "squawk",
+        "definition": "4-digit octal code transmitted by an aircraft's transponder to identify the flight to air traffic control."
+      },
+      {
+        "term": "dep_iata / arr_iata",
+        "definition": "Departure / arrival airport IATA 3-letter code."
+      },
+      {
+        "term": "dep_icao / arr_icao",
+        "definition": "Departure / arrival airport ICAO 4-letter code."
+      },
+      {
+        "term": "status",
+        "definition": "Flight operational status. Common values: scheduled, en-route, landed, cancelled, diverted."
+      },
+      {
+        "term": "delayed",
+        "definition": "Total delay in minutes (positive integer). Minimum threshold for delays endpoint is 30 minutes."
+      },
+      {
+        "term": "duration",
+        "definition": "Scheduled block-to-block flight duration in minutes."
+      },
+      {
+        "term": "alt",
+        "definition": "Altitude in meters above mean sea level (AMSL) for airborne flights, or elevation in meters for airports."
+      },
+      {
+        "term": "dir",
+        "definition": "True heading/direction of the aircraft in degrees (0-360), where 0/360 is north."
+      },
+      {
+        "term": "v_speed",
+        "definition": "Vertical speed in meters per second. Positive values indicate climb, negative indicate descent."
+      },
+      {
+        "term": "reg_number",
+        "definition": "Aircraft tail number / registration number as assigned by the country's aviation authority."
+      },
+      {
+        "term": "codeshare",
+        "definition": "Commercial arrangement where one airline (cs_airline_iata) sells seats on another airline's flight under its own flight code."
+      },
+      {
+        "term": "msn",
+        "definition": "Manufacturer Serial Number — unique production number assigned to each aircraft by its manufacturer."
+      },
+      {
+        "term": "api_key",
+        "definition": "Authentication credential passed as a query parameter. Obtained via signup at airlabs.co."
+      },
+      {
+        "term": "_fields",
+        "definition": "Comma-separated list of response field names to return. Used to reduce response payload size."
+      },
+      {
+        "term": "_limit",
+        "definition": "Maximum number of results to return in a single response (1-1000). Default varies by endpoint."
+      }
+    ]
+  }
+}

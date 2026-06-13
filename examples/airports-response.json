@@ -1,0 +1,36 @@
+{
+  "request": {
+    "lang": "en",
+    "currency": "USD",
+    "time": 0.045,
+    "id": "req_ghi789",
+    "server": "ap1",
+    "host": "airlabs.co",
+    "pid": 12347,
+    "version": 9,
+    "method": "GET /api/v9/airports",
+    "params": {
+      "iata_code": "JFK"
+    }
+  },
+  "response": [
+    {
+      "name": "John F Kennedy International Airport",
+      "iata_code": "JFK",
+      "icao_code": "KJFK",
+      "lat": 40.6413,
+      "lng": -73.7781,
+      "alt": 4,
+      "city": "New York",
+      "city_code": "NYC",
+      "un_locode": "USJFK",
+      "timezone": "America/New_York",
+      "country_code": "US",
+      "phone": "+1 718-244-4444",
+      "website": "https://www.jfkairport.com",
+      "popularity": 1,
+      "is_major": true,
+      "slug": "john-f-kennedy-international-airport"
+    }
+  ]
+}

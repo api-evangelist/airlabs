@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://airlabs.co/json-schema/flight",
+  "title": "Flight",
+  "description": "Real-time flight position and status data",
+  "type": "object",
+  "properties": {
+    "hex": { "type": "string", "description": "ICAO 24-bit address (hex)" },
+    "reg_number": { "type": "string", "description": "Aircraft registration number" },
+    "flag": { "type": "string", "description": "Country ISO 2 code" },
+    "lat": { "type": "number", "description": "Latitude in decimal degrees" },
+    "lng": { "type": "number", "description": "Longitude in decimal degrees" },
+    "alt": { "type": "integer", "description": "Altitude in meters" },
+    "dir": { "type": "number", "description": "Direction / heading in degrees (0-360)" },
+    "speed": { "type": "integer", "description": "Horizontal speed in km/h" },
+    "v_speed": { "type": "number", "description": "Vertical speed in m/s" },
+    "squawk": { "type": "string", "description": "Transponder squawk code" },
+    "flight_number": { "type": "string", "description": "Flight number" },
+    "flight_iata": { "type": "string", "description": "Flight IATA code" },
+    "flight_icao": { "type": "string", "description": "Flight ICAO code" },
+    "dep_iata": { "type": "string", "description": "Departure airport IATA code" },
+    "dep_icao": { "type": "string", "description": "Departure airport ICAO code" },
+    "arr_iata": { "type": "string", "description": "Arrival airport IATA code" },
+    "arr_icao": { "type": "string", "description": "Arrival airport ICAO code" },
+    "airline_iata": { "type": "string", "description": "Airline IATA code" },
+    "airline_icao": { "type": "string", "description": "Airline ICAO code" },
+    "aircraft_icao": { "type": "string", "description": "Aircraft ICAO type code" },
+    "updated": { "type": "integer", "description": "Last update Unix timestamp" },
+    "status": { "type": "string", "description": "Flight status (en-route, landed, scheduled, cancelled, etc.)" }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://airlabs.co/json-schema/route",
+  "title": "Route",
+  "description": "Airline route database record",
+  "type": "object",
+  "properties": {
+    "airline_iata": { "type": "string", "description": "Airline IATA code" },
+    "airline_icao": { "type": "string", "description": "Airline ICAO code" },
+    "flight_number": { "type": "string", "description": "Flight number" },
+    "flight_iata": { "type": "string", "description": "Flight IATA code" },
+    "flight_icao": { "type": "string", "description": "Flight ICAO code" },
+    "dep_iata": { "type": "string", "description": "Departure airport IATA code" },
+    "dep_icao": { "type": "string", "description": "Departure airport ICAO code" },
+    "dep_terminal": { "type": "string", "description": "Departure terminal" },
+    "dep_time": { "type": "string", "description": "Scheduled departure time (local)" },
+    "dep_time_utc": { "type": "string", "description": "Scheduled departure time (UTC)" },
+    "arr_iata": { "type": "string", "description": "Arrival airport IATA code" },
+    "arr_icao": { "type": "string", "description": "Arrival airport ICAO code" },
+    "arr_terminal": { "type": "string", "description": "Arrival terminal" },
+    "arr_time": { "type": "string", "description": "Scheduled arrival time (local)" },
+    "arr_time_utc": { "type": "string", "description": "Scheduled arrival time (UTC)" },
+    "duration": { "type": "integer", "description": "Flight duration in minutes" },
+    "days": {
+      "type": "array",
+      "description": "Days of week the route operates",
+      "items": { "type": "string" }
+    },
+    "cs_airline_iata": { "type": "string", "description": "Codeshare airline IATA code" },
+    "cs_flight_number": { "type": "string", "description": "Codeshare flight number" },
+    "cs_flight_iata": { "type": "string", "description": "Codeshare flight IATA code" }
+  }
+}
