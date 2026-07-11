@@ -170,6 +170,10 @@ apis:
       - type: Documentation
         url: https://airlabs.co/docs/suggest
 common:
+  - type: DomainSecurity
+    url: security/airlabs-domain-security.yml
+  - type: Authentication
+    url: authentication/airlabs-authentication.yml
   - type: Authentication
     url: https://airlabs.co/docs
   - type: Plans
