@@ -1,0 +1,213 @@
+openapi: 3.0.3
+info:
+  title: AirLabs Aviation Data Airlines API
+  description: Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.
+  version: v9
+  termsOfService: https://airlabs.co/terms
+  contact:
+    name: AirLabs
+    url: https://airlabs.co
+    email: info@airlabs.co
+  license:
+    name: Proprietary
+    url: https://airlabs.co/terms
+servers:
+- url: https://airlabs.co/api/v9
+  description: Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Airlines
+  description: Airline reference data
+paths:
+  /airlines:
+    get:
+      summary: Airlines database
+      description: Returns airlines from the database.
+      tags:
+      - Airlines
+      operationId: airlines_airlines
+      parameters:
+      - name: iata_code
+        in: query
+        required: false
+        description: Airline IATA code
+        schema:
+          type: string
+      - name: icao_code
+        in: query
+        required: false
+        description: Airline ICAO code
+        schema:
+          type: string
+      - name: airline_iata
+        in: query
+        required: false
+        description: Alias for iata_code
+        schema:
+          type: string
+      - name: airline_icao
+        in: query
+        required: false
+        description: Alias for icao_code
+        schema:
+          type: string
+      - $ref: '#/components/parameters/FieldsParam'
+      - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AirlinesResponse'
+        '400':
+          description: Bad request — missing or invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized — missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden — plan limit reached or feature not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too many requests — rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Airline:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Airline name
+        iata_code:
+          type: string
+          description: Airline IATA code
+        icao_code:
+          type: string
+          description: Airline ICAO code
+        iata_prefix:
+          type: string
+          description: IATA accounting prefix
+        iata_accounting:
+          type: string
+          description: IATA accounting code
+        callsign:
+          type: string
+          description: Airline callsign
+        country_code:
+          type: string
+          description: Country ISO 2 code
+        hub_code:
+          type: string
+          description: Main hub airport IATA code
+        fleet_size:
+          type: integer
+          description: Total fleet size
+        fleet_average_age:
+          type: number
+          format: float
+          description: Average fleet age in years
+        date_founded:
+          type: string
+          description: Year founded
+        date_active:
+          type: string
+          description: Date airline became active
+        status:
+          type: string
+          description: Airline status
+        type:
+          type: string
+          description: Airline type (scheduled, charter, cargo)
+    RequestMeta:
+      type: object
+      description: Echo of the request and processing metadata
+      properties:
+        lang:
+          type: string
+        currency:
+          type: string
+        time:
+          type: number
+        id:
+          type: string
+        server:
+          type: string
+        host:
+          type: string
+        pid:
+          type: integer
+        version:
+          type: integer
+        method:
+          type: string
+        params:
+          type: object
+          additionalProperties: true
+    AirlinesResponse:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/Airline'
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
+  parameters:
+    LimitParam:
+      name: _limit
+      in: query
+      required: false
+      description: Maximum number of results to return
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 1000
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key. Sign up at https://airlabs.co/signup
+externalDocs:
+  description: Full documentation
+  url: https://airlabs.co/docs/

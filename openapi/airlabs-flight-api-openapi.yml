@@ -1,0 +1,279 @@
+openapi: 3.0.3
+info:
+  title: AirLabs Aviation Data Airlines Flight API
+  description: Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.
+  version: v9
+  termsOfService: https://airlabs.co/terms
+  contact:
+    name: AirLabs
+    url: https://airlabs.co
+    email: info@airlabs.co
+  license:
+    name: Proprietary
+    url: https://airlabs.co/terms
+servers:
+- url: https://airlabs.co/api/v9
+  description: Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Flight
+  description: Single flight information
+paths:
+  /flight:
+    get:
+      summary: Single flight info
+      description: Returns detailed information about a single flight. One of flight_iata or flight_icao is required.
+      tags:
+      - Flight
+      operationId: flight_flight
+      parameters:
+      - name: flight_iata
+        in: query
+        required: false
+        description: Flight IATA code
+        schema:
+          type: string
+      - name: flight_icao
+        in: query
+        required: false
+        description: Flight ICAO code
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightResponse'
+        '400':
+          description: Bad request — missing or invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized — missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden — plan limit reached or feature not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too many requests — rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
+    FlightResponse:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          $ref: '#/components/schemas/FlightDetail'
+    RequestMeta:
+      type: object
+      description: Echo of the request and processing metadata
+      properties:
+        lang:
+          type: string
+        currency:
+          type: string
+        time:
+          type: number
+        id:
+          type: string
+        server:
+          type: string
+        host:
+          type: string
+        pid:
+          type: integer
+        version:
+          type: integer
+        method:
+          type: string
+        params:
+          type: object
+          additionalProperties: true
+    FlightDetail:
+      type: object
+      properties:
+        hex:
+          type: string
+          description: ICAO 24-bit address (hex)
+        reg_number:
+          type: string
+          description: Aircraft registration number
+        flag:
+          type: string
+          description: Country ISO 2 code
+        lat:
+          type: number
+          format: float
+          description: Latitude in decimal degrees
+        lng:
+          type: number
+          format: float
+          description: Longitude in decimal degrees
+        alt:
+          type: integer
+          description: Altitude in meters
+        dir:
+          type: number
+          format: float
+          description: Direction / heading in degrees (0-360)
+        speed:
+          type: integer
+          description: Horizontal speed in km/h
+        v_speed:
+          type: number
+          format: float
+          description: Vertical speed in m/s
+        squawk:
+          type: string
+          description: Transponder squawk code
+        flight_number:
+          type: string
+          description: Flight number
+        flight_iata:
+          type: string
+          description: Flight IATA code
+        flight_icao:
+          type: string
+          description: Flight ICAO code
+        dep_iata:
+          type: string
+          description: Departure airport IATA code
+        dep_icao:
+          type: string
+          description: Departure airport ICAO code
+        arr_iata:
+          type: string
+          description: Arrival airport IATA code
+        arr_icao:
+          type: string
+          description: Arrival airport ICAO code
+        airline_iata:
+          type: string
+          description: Airline IATA code
+        airline_icao:
+          type: string
+          description: Airline ICAO code
+        aircraft_icao:
+          type: string
+          description: Aircraft ICAO type code
+        updated:
+          type: integer
+          description: Last update Unix timestamp
+        status:
+          type: string
+          description: Flight status (en-route, landed, scheduled, cancelled, etc.)
+        dep_terminal:
+          type: string
+          description: Departure terminal
+        dep_gate:
+          type: string
+          description: Departure gate
+        dep_time:
+          type: string
+          description: Scheduled departure time (local)
+        dep_time_utc:
+          type: string
+          description: Scheduled departure time (UTC)
+        dep_estimated:
+          type: string
+          description: Estimated departure time (local)
+        dep_estimated_utc:
+          type: string
+          description: Estimated departure time (UTC)
+        dep_actual:
+          type: string
+          description: Actual departure time (local)
+        dep_actual_utc:
+          type: string
+          description: Actual departure time (UTC)
+        arr_terminal:
+          type: string
+          description: Arrival terminal
+        arr_gate:
+          type: string
+          description: Arrival gate
+        arr_baggage:
+          type: string
+          description: Baggage belt / carousel
+        arr_time:
+          type: string
+          description: Scheduled arrival time (local)
+        arr_time_utc:
+          type: string
+          description: Scheduled arrival time (UTC)
+        arr_estimated:
+          type: string
+          description: Estimated arrival time (local)
+        arr_estimated_utc:
+          type: string
+          description: Estimated arrival time (UTC)
+        arr_actual:
+          type: string
+          description: Actual arrival time (local)
+        arr_actual_utc:
+          type: string
+          description: Actual arrival time (UTC)
+        cs_airline_iata:
+          type: string
+          description: Codeshare airline IATA code
+        cs_flight_iata:
+          type: string
+          description: Codeshare flight IATA code
+        cs_flight_number:
+          type: string
+          description: Codeshare flight number
+        duration:
+          type: integer
+          description: Scheduled duration in minutes
+        delayed:
+          type: integer
+          description: Delay in minutes
+        dep_delayed:
+          type: integer
+          description: Departure delay in minutes
+        arr_delayed:
+          type: integer
+          description: Arrival delay in minutes
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key. Sign up at https://airlabs.co/signup
+externalDocs:
+  description: Full documentation
+  url: https://airlabs.co/docs/

@@ -1,0 +1,205 @@
+openapi: 3.0.3
+info:
+  title: AirLabs Aviation Data Airlines Nearby API
+  description: Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.
+  version: v9
+  termsOfService: https://airlabs.co/terms
+  contact:
+    name: AirLabs
+    url: https://airlabs.co
+    email: info@airlabs.co
+  license:
+    name: Proprietary
+    url: https://airlabs.co/terms
+servers:
+- url: https://airlabs.co/api/v9
+  description: Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Nearby
+  description: Geographic airport lookup
+paths:
+  /nearby:
+    get:
+      summary: Nearby airports
+      description: Returns airports near the specified coordinates.
+      tags:
+      - Nearby
+      operationId: nearby_nearby
+      parameters:
+      - name: lat
+        in: query
+        required: true
+        description: Latitude in decimal degrees
+        schema:
+          type: number
+          format: float
+      - name: lng
+        in: query
+        required: true
+        description: Longitude in decimal degrees
+        schema:
+          type: number
+          format: float
+      - name: distance
+        in: query
+        required: false
+        description: Radius distance in km (default 100)
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/FieldsParam'
+      - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NearbyResponse'
+        '400':
+          description: Bad request — missing or invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized — missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden — plan limit reached or feature not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too many requests — rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    RequestMeta:
+      type: object
+      description: Echo of the request and processing metadata
+      properties:
+        lang:
+          type: string
+        currency:
+          type: string
+        time:
+          type: number
+        id:
+          type: string
+        server:
+          type: string
+        host:
+          type: string
+        pid:
+          type: integer
+        version:
+          type: integer
+        method:
+          type: string
+        params:
+          type: object
+          additionalProperties: true
+    NearbyResponse:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/NearbyAirport'
+    NearbyAirport:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Airport name
+        iata_code:
+          type: string
+          description: Airport IATA code
+        icao_code:
+          type: string
+          description: Airport ICAO code
+        lat:
+          type: number
+          format: float
+          description: Airport latitude
+        lng:
+          type: number
+          format: float
+          description: Airport longitude
+        alt:
+          type: integer
+          description: Airport elevation in meters
+        city:
+          type: string
+          description: City name
+        city_code:
+          type: string
+          description: City IATA code
+        country_code:
+          type: string
+          description: Country ISO 2 code
+        country:
+          type: string
+          description: Country name
+        timezone:
+          type: string
+          description: Timezone (tz database name)
+        distance:
+          type: number
+          format: float
+          description: Distance from provided coordinates (km)
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
+  parameters:
+    LimitParam:
+      name: _limit
+      in: query
+      required: false
+      description: Maximum number of results to return
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 1000
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key. Sign up at https://airlabs.co/signup
+externalDocs:
+  description: Full documentation
+  url: https://airlabs.co/docs/

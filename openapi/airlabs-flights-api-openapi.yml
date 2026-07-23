@@ -1,0 +1,282 @@
+openapi: 3.0.3
+info:
+  title: AirLabs Aviation Data Airlines Flights API
+  description: Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.
+  version: v9
+  termsOfService: https://airlabs.co/terms
+  contact:
+    name: AirLabs
+    url: https://airlabs.co
+    email: info@airlabs.co
+  license:
+    name: Proprietary
+    url: https://airlabs.co/terms
+servers:
+- url: https://airlabs.co/api/v9
+  description: Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Flights
+  description: Real-time flight positions
+paths:
+  /flights:
+    get:
+      summary: Real-time flights
+      description: Returns real-time positions and status of flights worldwide. Optional filters narrow the result set.
+      tags:
+      - Flights
+      operationId: flights_flights
+      parameters:
+      - name: flight_iata
+        in: query
+        required: false
+        description: Flight IATA code (e.g. AA100)
+        schema:
+          type: string
+      - name: flight_icao
+        in: query
+        required: false
+        description: Flight ICAO code (e.g. AAL100)
+        schema:
+          type: string
+      - name: airline_iata
+        in: query
+        required: false
+        description: Airline IATA code
+        schema:
+          type: string
+      - name: airline_icao
+        in: query
+        required: false
+        description: Airline ICAO code
+        schema:
+          type: string
+      - name: dep_iata
+        in: query
+        required: false
+        description: Departure airport IATA code
+        schema:
+          type: string
+      - name: dep_icao
+        in: query
+        required: false
+        description: Departure airport ICAO code
+        schema:
+          type: string
+      - name: arr_iata
+        in: query
+        required: false
+        description: Arrival airport IATA code
+        schema:
+          type: string
+      - name: arr_icao
+        in: query
+        required: false
+        description: Arrival airport ICAO code
+        schema:
+          type: string
+      - name: flag
+        in: query
+        required: false
+        description: Country ISO 2 code
+        schema:
+          type: string
+      - name: hex
+        in: query
+        required: false
+        description: ICAO 24-bit address (hex)
+        schema:
+          type: string
+      - name: reg_number
+        in: query
+        required: false
+        description: Aircraft registration number
+        schema:
+          type: string
+      - $ref: '#/components/parameters/FieldsParam'
+      - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightsResponse'
+        '400':
+          description: Bad request — missing or invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized — missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden — plan limit reached or feature not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too many requests — rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    RequestMeta:
+      type: object
+      description: Echo of the request and processing metadata
+      properties:
+        lang:
+          type: string
+        currency:
+          type: string
+        time:
+          type: number
+        id:
+          type: string
+        server:
+          type: string
+        host:
+          type: string
+        pid:
+          type: integer
+        version:
+          type: integer
+        method:
+          type: string
+        params:
+          type: object
+          additionalProperties: true
+    Flight:
+      type: object
+      properties:
+        hex:
+          type: string
+          description: ICAO 24-bit address (hex)
+        reg_number:
+          type: string
+          description: Aircraft registration number
+        flag:
+          type: string
+          description: Country ISO 2 code
+        lat:
+          type: number
+          format: float
+          description: Latitude in decimal degrees
+        lng:
+          type: number
+          format: float
+          description: Longitude in decimal degrees
+        alt:
+          type: integer
+          description: Altitude in meters
+        dir:
+          type: number
+          format: float
+          description: Direction / heading in degrees (0-360)
+        speed:
+          type: integer
+          description: Horizontal speed in km/h
+        v_speed:
+          type: number
+          format: float
+          description: Vertical speed in m/s
+        squawk:
+          type: string
+          description: Transponder squawk code
+        flight_number:
+          type: string
+          description: Flight number
+        flight_iata:
+          type: string
+          description: Flight IATA code
+        flight_icao:
+          type: string
+          description: Flight ICAO code
+        dep_iata:
+          type: string
+          description: Departure airport IATA code
+        dep_icao:
+          type: string
+          description: Departure airport ICAO code
+        arr_iata:
+          type: string
+          description: Arrival airport IATA code
+        arr_icao:
+          type: string
+          description: Arrival airport ICAO code
+        airline_iata:
+          type: string
+          description: Airline IATA code
+        airline_icao:
+          type: string
+          description: Airline ICAO code
+        aircraft_icao:
+          type: string
+          description: Aircraft ICAO type code
+        updated:
+          type: integer
+          description: Last update Unix timestamp
+        status:
+          type: string
+          description: Flight status (en-route, landed, scheduled, cancelled, etc.)
+    FlightsResponse:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/Flight'
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
+  parameters:
+    LimitParam:
+      name: _limit
+      in: query
+      required: false
+      description: Maximum number of results to return
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 1000
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key. Sign up at https://airlabs.co/signup
+externalDocs:
+  description: Full documentation
+  url: https://airlabs.co/docs/

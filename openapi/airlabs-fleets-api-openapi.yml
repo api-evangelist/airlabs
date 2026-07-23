@@ -1,0 +1,240 @@
+openapi: 3.0.3
+info:
+  title: AirLabs Aviation Data Airlines Fleets API
+  description: Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.
+  version: v9
+  termsOfService: https://airlabs.co/terms
+  contact:
+    name: AirLabs
+    url: https://airlabs.co
+    email: info@airlabs.co
+  license:
+    name: Proprietary
+    url: https://airlabs.co/terms
+servers:
+- url: https://airlabs.co/api/v9
+  description: Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Fleets
+  description: Aircraft fleet records
+paths:
+  /fleets:
+    get:
+      summary: Aircraft fleets database
+      description: Returns aircraft from the fleets database. At least one filter parameter is recommended.
+      tags:
+      - Fleets
+      operationId: fleets_fleets
+      parameters:
+      - name: airline_iata
+        in: query
+        required: false
+        description: Airline IATA code
+        schema:
+          type: string
+      - name: airline_icao
+        in: query
+        required: false
+        description: Airline ICAO code
+        schema:
+          type: string
+      - name: reg_number
+        in: query
+        required: false
+        description: Aircraft registration number
+        schema:
+          type: string
+      - name: hex
+        in: query
+        required: false
+        description: ICAO 24-bit address (hex)
+        schema:
+          type: string
+      - name: flag
+        in: query
+        required: false
+        description: Country ISO 2 code
+        schema:
+          type: string
+      - $ref: '#/components/parameters/FieldsParam'
+      - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FleetsResponse'
+        '400':
+          description: Bad request — missing or invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized — missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden — plan limit reached or feature not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too many requests — rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    RequestMeta:
+      type: object
+      description: Echo of the request and processing metadata
+      properties:
+        lang:
+          type: string
+        currency:
+          type: string
+        time:
+          type: number
+        id:
+          type: string
+        server:
+          type: string
+        host:
+          type: string
+        pid:
+          type: integer
+        version:
+          type: integer
+        method:
+          type: string
+        params:
+          type: object
+          additionalProperties: true
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
+    FleetsResponse:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/FleetAircraft'
+    FleetAircraft:
+      type: object
+      properties:
+        hex:
+          type: string
+          description: ICAO 24-bit address (hex)
+        reg_number:
+          type: string
+          description: Aircraft registration number
+        flag:
+          type: string
+          description: Country ISO 2 code
+        airline_iata:
+          type: string
+          description: Airline IATA code
+        airline_icao:
+          type: string
+          description: Airline ICAO code
+        aircraft_iata:
+          type: string
+          description: Aircraft IATA type code
+        aircraft_icao:
+          type: string
+          description: Aircraft ICAO type code
+        model:
+          type: string
+          description: Aircraft model name
+        manufacturer:
+          type: string
+          description: Aircraft manufacturer
+        built_year:
+          type: integer
+          description: Year of manufacture
+        first_flight_date:
+          type: string
+          description: Date of first flight (YYYY-MM-DD)
+        engines_count:
+          type: integer
+          description: Number of engines
+        engines_type:
+          type: string
+          description: Engine type (jet, turboprop, piston)
+        plane_age:
+          type: number
+          format: float
+          description: Aircraft age in years
+        plane_owner:
+          type: string
+          description: Aircraft owner
+        plane_status:
+          type: string
+          description: Aircraft status (active, stored, etc.)
+        msn:
+          type: string
+          description: Manufacturer serial number
+        line_number:
+          type: string
+          description: Production line number
+        num_seats:
+          type: integer
+          description: Number of seats
+        rollout_date:
+          type: string
+          description: Rollout date (YYYY-MM-DD)
+        delivery_date:
+          type: string
+          description: Delivery date (YYYY-MM-DD)
+  parameters:
+    LimitParam:
+      name: _limit
+      in: query
+      required: false
+      description: Maximum number of results to return
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 1000
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key. Sign up at https://airlabs.co/signup
+externalDocs:
+  description: Full documentation
+  url: https://airlabs.co/docs/

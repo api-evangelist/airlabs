@@ -1,0 +1,232 @@
+openapi: 3.0.3
+info:
+  title: AirLabs Aviation Data Airlines Airports API
+  description: Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.
+  version: v9
+  termsOfService: https://airlabs.co/terms
+  contact:
+    name: AirLabs
+    url: https://airlabs.co
+    email: info@airlabs.co
+  license:
+    name: Proprietary
+    url: https://airlabs.co/terms
+servers:
+- url: https://airlabs.co/api/v9
+  description: Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Airports
+  description: Airport reference data
+paths:
+  /airports:
+    get:
+      summary: Airports database
+      description: Returns airports from the database.
+      tags:
+      - Airports
+      operationId: airports_airports
+      parameters:
+      - name: iata_code
+        in: query
+        required: false
+        description: Airport IATA code
+        schema:
+          type: string
+      - name: icao_code
+        in: query
+        required: false
+        description: Airport ICAO code
+        schema:
+          type: string
+      - name: airport_iata
+        in: query
+        required: false
+        description: Alias for iata_code
+        schema:
+          type: string
+      - name: airport_icao
+        in: query
+        required: false
+        description: Alias for icao_code
+        schema:
+          type: string
+      - name: city_code
+        in: query
+        required: false
+        description: City IATA code
+        schema:
+          type: string
+      - name: country_code
+        in: query
+        required: false
+        description: Country ISO 2 code
+        schema:
+          type: string
+      - $ref: '#/components/parameters/FieldsParam'
+      - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AirportsResponse'
+        '400':
+          description: Bad request — missing or invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized — missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden — plan limit reached or feature not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too many requests — rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    RequestMeta:
+      type: object
+      description: Echo of the request and processing metadata
+      properties:
+        lang:
+          type: string
+        currency:
+          type: string
+        time:
+          type: number
+        id:
+          type: string
+        server:
+          type: string
+        host:
+          type: string
+        pid:
+          type: integer
+        version:
+          type: integer
+        method:
+          type: string
+        params:
+          type: object
+          additionalProperties: true
+    AirportsResponse:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/Airport'
+    Airport:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Airport name
+        iata_code:
+          type: string
+          description: Airport IATA code
+        icao_code:
+          type: string
+          description: Airport ICAO code
+        lat:
+          type: number
+          format: float
+          description: Latitude in decimal degrees
+        lng:
+          type: number
+          format: float
+          description: Longitude in decimal degrees
+        alt:
+          type: integer
+          description: Elevation in meters
+        city:
+          type: string
+          description: City name
+        city_code:
+          type: string
+          description: City IATA code
+        un_locode:
+          type: string
+          description: UN/LOCODE
+        timezone:
+          type: string
+          description: Timezone (tz database name)
+        country_code:
+          type: string
+          description: Country ISO 2 code
+        phone:
+          type: string
+          description: Airport phone number
+        website:
+          type: string
+          description: Airport website URL
+        popularity:
+          type: integer
+          description: Popularity rank
+        is_major:
+          type: boolean
+          description: Whether this is a major airport
+        slug:
+          type: string
+          description: URL-friendly slug
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
+  parameters:
+    LimitParam:
+      name: _limit
+      in: query
+      required: false
+      description: Maximum number of results to return
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 1000
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key. Sign up at https://airlabs.co/signup
+externalDocs:
+  description: Full documentation
+  url: https://airlabs.co/docs/
