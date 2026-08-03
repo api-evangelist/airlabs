@@ -1,0 +1,36 @@
+{
+  "provider": "airlabs",
+  "sources": [
+    "airlabs-airlines-api-openapi.yml",
+    "airlabs-airports-api-openapi.yml",
+    "airlabs-alert-api-openapi.yml",
+    "airlabs-cities-api-openapi.yml",
+    "airlabs-delays-api-openapi.yml",
+    "airlabs-fleets-api-openapi.yml",
+    "airlabs-flight-api-openapi.yml",
+    "airlabs-flights-api-openapi.yml",
+    "airlabs-nearby-api-openapi.yml",
+    "airlabs-routes-api-openapi.yml",
+    "airlabs-schedules-api-openapi.yml",
+    "airlabs-suggest-api-openapi.yml"
+  ],
+  "outputs": [
+    "airlabs-airlines-api-openapi.yml",
+    "airlabs-airports-api-openapi.yml",
+    "airlabs-alert-api-openapi.yml",
+    "airlabs-cities-api-openapi.yml",
+    "airlabs-delays-api-openapi.yml",
+    "airlabs-fleets-api-openapi.yml",
+    "airlabs-flight-api-openapi.yml",
+    "airlabs-flights-api-openapi.yml",
+    "airlabs-nearby-api-openapi.yml",
+    "airlabs-routes-api-openapi.yml",
+    "airlabs-schedules-api-openapi.yml",
+    "airlabs-suggest-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
