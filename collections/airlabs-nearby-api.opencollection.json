@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AirLabs Aviation Data Airlines Nearby API",
+    "version": "v9"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Nearby",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Nearby airports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://airlabs.co/api/v9/nearby",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query",
+                "description": "Latitude in decimal degrees"
+              },
+              {
+                "name": "lng",
+                "value": "",
+                "type": "query",
+                "description": "Longitude in decimal degrees"
+              },
+              {
+                "name": "distance",
+                "value": "",
+                "type": "query",
+                "description": "Radius distance in km (default 100)"
+              },
+              {
+                "name": "_fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of response fields to return"
+              },
+              {
+                "name": "_limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return"
+              }
+            ]
+          },
+          "docs": "Returns airports near the specified coordinates."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

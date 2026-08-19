@@ -1,0 +1,415 @@
+{
+  "item": [
+    {
+      "id": "ef3a1ad8-a0f3-475f-967f-66981eca13fc",
+      "name": "Suggest",
+      "description": {
+        "content": "Autocomplete and search",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ad342b73-738d-4b1e-a74b-7843b0235710",
+          "name": "Autocomplete / search suggestions",
+          "request": {
+            "name": "Autocomplete / search suggestions",
+            "description": {
+              "content": "Returns matching airports, cities, and airlines for a search query. Minimum query length is 2 characters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "suggest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "(Required) Search query (min 2 chars)"
+                },
+                {
+                  "disabled": false,
+                  "key": "_fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of response fields to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "_limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of results to return"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5104d5bb-42d2-4e62-93de-bb479f44687a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "suggest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"lang\": \"string\",\n    \"currency\": \"string\",\n    \"time\": 5721.427242197329,\n    \"id\": \"string\",\n    \"server\": \"string\",\n    \"host\": \"string\",\n    \"pid\": 6225,\n    \"version\": 6013,\n    \"method\": \"string\",\n    \"params\": {\n      \"key_0\": true,\n      \"key_1\": 2378,\n      \"key_2\": \"string\",\n      \"key_3\": false,\n      \"key_4\": 4252.964926977534\n    }\n  },\n  \"response\": {\n    \"airports\": [\n      {\n        \"name\": \"string\",\n        \"iata_code\": \"string\",\n        \"icao_code\": \"string\",\n        \"city\": \"string\",\n        \"city_code\": \"string\",\n        \"country_code\": \"string\",\n        \"country\": \"string\",\n        \"lat\": 8918.649751328496,\n        \"lng\": 4822.716678918432\n      },\n      {\n        \"name\": \"string\",\n        \"iata_code\": \"string\",\n        \"icao_code\": \"string\",\n        \"city\": \"string\",\n        \"city_code\": \"string\",\n        \"country_code\": \"string\",\n        \"country\": \"string\",\n        \"lat\": 9381.543094881234,\n        \"lng\": 5180.649902563506\n      }\n    ],\n    \"cities\": [\n      {\n        \"name\": \"string\",\n        \"city_code\": \"string\",\n        \"country_code\": \"string\",\n        \"country\": \"string\",\n        \"lat\": 4530.164910583827,\n        \"lng\": 1399.3541924694664\n      },\n      {\n        \"name\": \"string\",\n        \"city_code\": \"string\",\n        \"country_code\": \"string\",\n        \"country\": \"string\",\n        \"lat\": 5606.279230157735,\n        \"lng\": 7361.50944196573\n      }\n    ],\n    \"airlines\": [\n      {\n        \"name\": \"string\",\n        \"iata_code\": \"string\",\n        \"icao_code\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iata_code\": \"string\",\n        \"icao_code\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aa0abe26-f3f6-4775-a08f-c8567a09773f",
+              "name": "Bad request — missing or invalid parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "suggest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89b3ab07-a278-4c24-9e69-599e2ac87ea2",
+              "name": "Unauthorized — missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "suggest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "56fc8547-c87f-449a-89fd-f816521fdf1e",
+              "name": "Forbidden — plan limit reached or feature not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "suggest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b38f9f29-8ee1-4be7-a894-c1ee8046c74c",
+              "name": "Too many requests — rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "suggest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "253a312f-9f27-428a-b404-88bac52323ce",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "suggest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://airlabs.co/api/v9",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7183ccf7-8fec-4652-8f4b-c254a203d2f3",
+    "name": "AirLabs Aviation Data Airlines Suggest API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.\n\nContact Support:\n Name: AirLabs\n Email: info@airlabs.co",
+      "type": "text/plain"
+    }
+  }
+}

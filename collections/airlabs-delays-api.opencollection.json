@@ -1,0 +1,99 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AirLabs Aviation Data Airlines Delays API",
+    "version": "v9"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Delays",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Delayed flights",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://airlabs.co/api/v9/delays",
+            "params": [
+              {
+                "name": "dep_iata",
+                "value": "",
+                "type": "query",
+                "description": "Departure airport IATA"
+              },
+              {
+                "name": "dep_icao",
+                "value": "",
+                "type": "query",
+                "description": "Departure airport ICAO"
+              },
+              {
+                "name": "arr_iata",
+                "value": "",
+                "type": "query",
+                "description": "Arrival airport IATA"
+              },
+              {
+                "name": "arr_icao",
+                "value": "",
+                "type": "query",
+                "description": "Arrival airport ICAO"
+              },
+              {
+                "name": "airline_iata",
+                "value": "",
+                "type": "query",
+                "description": "Airline IATA"
+              },
+              {
+                "name": "airline_icao",
+                "value": "",
+                "type": "query",
+                "description": "Airline ICAO"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Filter: departures or arrivals"
+              },
+              {
+                "name": "delay",
+                "value": "",
+                "type": "query",
+                "description": "Minimum delay in minutes"
+              },
+              {
+                "name": "_fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of response fields to return"
+              },
+              {
+                "name": "_limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return"
+              }
+            ]
+          },
+          "docs": "Returns currently delayed flights with optional filters."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

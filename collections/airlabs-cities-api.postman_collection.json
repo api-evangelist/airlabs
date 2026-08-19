@@ -1,0 +1,445 @@
+{
+  "item": [
+    {
+      "id": "986c6748-471c-42a1-acfc-3418aaecb8fe",
+      "name": "Cities",
+      "description": {
+        "content": "City reference data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2039dd16-efe3-480c-905f-0c53766e4624",
+          "name": "Cities database",
+          "request": {
+            "name": "Cities database",
+            "description": {
+              "content": "Returns cities from the database.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "city_code",
+                  "value": "<string>",
+                  "description": "City IATA code"
+                },
+                {
+                  "disabled": false,
+                  "key": "country_code",
+                  "value": "<string>",
+                  "description": "Country ISO 2 code"
+                },
+                {
+                  "disabled": false,
+                  "key": "_fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of response fields to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "_limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of results to return"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4fa3c727-f2da-4f53-adb3-fd48e6a89a55",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "city_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"lang\": \"string\",\n    \"currency\": \"string\",\n    \"time\": 6753.75512480312,\n    \"id\": \"string\",\n    \"server\": \"string\",\n    \"host\": \"string\",\n    \"pid\": 353,\n    \"version\": 5153,\n    \"method\": \"string\",\n    \"params\": {\n      \"key_0\": 225.8630128921968\n    }\n  },\n  \"response\": [\n    {\n      \"name\": \"string\",\n      \"city_code\": \"string\",\n      \"lat\": 8931.747527966638,\n      \"lng\": 7658.385410465299,\n      \"country_code\": \"string\",\n      \"timezone\": \"string\",\n      \"un_locode\": \"string\",\n      \"popularity\": 5705\n    },\n    {\n      \"name\": \"string\",\n      \"city_code\": \"string\",\n      \"lat\": 9523.825736346802,\n      \"lng\": 6864.290281762291,\n      \"country_code\": \"string\",\n      \"timezone\": \"string\",\n      \"un_locode\": \"string\",\n      \"popularity\": 9825\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b288f20-7688-438a-b236-7c1e753c4999",
+              "name": "Bad request — missing or invalid parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "city_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7b69fd5a-a67a-46f9-9fa9-71a4618d5040",
+              "name": "Unauthorized — missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "city_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9f30f54-bf2b-4a14-bfaf-e9802f5c7f3e",
+              "name": "Forbidden — plan limit reached or feature not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "city_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "75147afb-4eb5-4d1b-bb4f-de206f5533f6",
+              "name": "Too many requests — rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "city_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "25a8da9e-2580-4fda-bd5f-ad149a3d98bb",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "city_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://airlabs.co/api/v9",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "79ed9751-f10c-4376-a046-1c050a40577d",
+    "name": "AirLabs Aviation Data Airlines Cities API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.\n\nContact Support:\n Name: AirLabs\n Email: info@airlabs.co",
+      "type": "text/plain"
+    }
+  }
+}

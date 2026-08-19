@@ -1,0 +1,505 @@
+{
+  "item": [
+    {
+      "id": "ba5ce3ff-7538-496c-81a3-12c48e91e83f",
+      "name": "Airlines",
+      "description": {
+        "content": "Airline reference data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5f26029a-0859-4214-8109-e06091ae9fcc",
+          "name": "Airlines database",
+          "request": {
+            "name": "Airlines database",
+            "description": {
+              "content": "Returns airlines from the database.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "airlines"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "iata_code",
+                  "value": "<string>",
+                  "description": "Airline IATA code"
+                },
+                {
+                  "disabled": false,
+                  "key": "icao_code",
+                  "value": "<string>",
+                  "description": "Airline ICAO code"
+                },
+                {
+                  "disabled": false,
+                  "key": "airline_iata",
+                  "value": "<string>",
+                  "description": "Alias for iata_code"
+                },
+                {
+                  "disabled": false,
+                  "key": "airline_icao",
+                  "value": "<string>",
+                  "description": "Alias for icao_code"
+                },
+                {
+                  "disabled": false,
+                  "key": "_fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of response fields to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "_limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of results to return"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "50ab1f06-ca47-4c49-bfb8-dc6436b283c1",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "airlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "iata_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "icao_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"lang\": \"string\",\n    \"currency\": \"string\",\n    \"time\": 8752.563637395366,\n    \"id\": \"string\",\n    \"server\": \"string\",\n    \"host\": \"string\",\n    \"pid\": 4592,\n    \"version\": 7934,\n    \"method\": \"string\",\n    \"params\": {\n      \"key_0\": 2461,\n      \"key_1\": \"string\"\n    }\n  },\n  \"response\": [\n    {\n      \"name\": \"string\",\n      \"iata_code\": \"string\",\n      \"icao_code\": \"string\",\n      \"iata_prefix\": \"string\",\n      \"iata_accounting\": \"string\",\n      \"callsign\": \"string\",\n      \"country_code\": \"string\",\n      \"hub_code\": \"string\",\n      \"fleet_size\": 7011,\n      \"fleet_average_age\": 3676.281264442287,\n      \"date_founded\": \"string\",\n      \"date_active\": \"string\",\n      \"status\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"iata_code\": \"string\",\n      \"icao_code\": \"string\",\n      \"iata_prefix\": \"string\",\n      \"iata_accounting\": \"string\",\n      \"callsign\": \"string\",\n      \"country_code\": \"string\",\n      \"hub_code\": \"string\",\n      \"fleet_size\": 6896,\n      \"fleet_average_age\": 9674.318047755496,\n      \"date_founded\": \"string\",\n      \"date_active\": \"string\",\n      \"status\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2e82637-de56-497b-bae8-c5bf84a2945d",
+              "name": "Bad request — missing or invalid parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "airlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "iata_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "icao_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "05415278-f151-4598-ad40-1726411afefc",
+              "name": "Unauthorized — missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "airlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "iata_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "icao_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07fbe2ba-0b62-462c-846b-b23bd9b4f5b5",
+              "name": "Forbidden — plan limit reached or feature not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "airlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "iata_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "icao_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "339c0fbf-d445-42e2-b14f-7fb978751303",
+              "name": "Too many requests — rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "airlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "iata_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "icao_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f986514-3ffe-4d57-8d81-030e41a6dabf",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "airlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "iata_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "icao_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://airlabs.co/api/v9",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6f9aeb54-b839-462d-b78e-ffd213da7824",
+    "name": "AirLabs Aviation Data Airlines API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.\n\nContact Support:\n Name: AirLabs\n Email: info@airlabs.co",
+      "type": "text/plain"
+    }
+  }
+}

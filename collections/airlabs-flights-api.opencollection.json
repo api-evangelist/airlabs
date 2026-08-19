@@ -1,0 +1,117 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AirLabs Aviation Data Airlines Flights API",
+    "version": "v9"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Flights",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Real-time flights",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://airlabs.co/api/v9/flights",
+            "params": [
+              {
+                "name": "flight_iata",
+                "value": "",
+                "type": "query",
+                "description": "Flight IATA code (e.g. AA100)"
+              },
+              {
+                "name": "flight_icao",
+                "value": "",
+                "type": "query",
+                "description": "Flight ICAO code (e.g. AAL100)"
+              },
+              {
+                "name": "airline_iata",
+                "value": "",
+                "type": "query",
+                "description": "Airline IATA code"
+              },
+              {
+                "name": "airline_icao",
+                "value": "",
+                "type": "query",
+                "description": "Airline ICAO code"
+              },
+              {
+                "name": "dep_iata",
+                "value": "",
+                "type": "query",
+                "description": "Departure airport IATA code"
+              },
+              {
+                "name": "dep_icao",
+                "value": "",
+                "type": "query",
+                "description": "Departure airport ICAO code"
+              },
+              {
+                "name": "arr_iata",
+                "value": "",
+                "type": "query",
+                "description": "Arrival airport IATA code"
+              },
+              {
+                "name": "arr_icao",
+                "value": "",
+                "type": "query",
+                "description": "Arrival airport ICAO code"
+              },
+              {
+                "name": "flag",
+                "value": "",
+                "type": "query",
+                "description": "Country ISO 2 code"
+              },
+              {
+                "name": "hex",
+                "value": "",
+                "type": "query",
+                "description": "ICAO 24-bit address (hex)"
+              },
+              {
+                "name": "reg_number",
+                "value": "",
+                "type": "query",
+                "description": "Aircraft registration number"
+              },
+              {
+                "name": "_fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of response fields to return"
+              },
+              {
+                "name": "_limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return"
+              }
+            ]
+          },
+          "docs": "Returns real-time positions and status of flights worldwide. Optional filters narrow the result set."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AirLabs Aviation Data Airlines Alert API",
+    "version": "v9"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Alert",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Flight alert",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://airlabs.co/api/v9/alert",
+            "params": [
+              {
+                "name": "flight_iata",
+                "value": "",
+                "type": "query",
+                "description": "Flight IATA code"
+              },
+              {
+                "name": "flight_icao",
+                "value": "",
+                "type": "query",
+                "description": "Flight ICAO code"
+              }
+            ]
+          },
+          "docs": "Returns flight details suitable for monitoring status changes, delays, gate changes. Response shape identical to /flight."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

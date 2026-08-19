@@ -1,0 +1,385 @@
+{
+  "item": [
+    {
+      "id": "3add2a4d-2393-456e-99ec-040406660b5b",
+      "name": "Flight",
+      "description": {
+        "content": "Single flight information",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "606441c1-8741-4127-b733-bfe0df2565a8",
+          "name": "Single flight info",
+          "request": {
+            "name": "Single flight info",
+            "description": {
+              "content": "Returns detailed information about a single flight. One of flight_iata or flight_icao is required.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "flight"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "flight_iata",
+                  "value": "<string>",
+                  "description": "Flight IATA code"
+                },
+                {
+                  "disabled": false,
+                  "key": "flight_icao",
+                  "value": "<string>",
+                  "description": "Flight ICAO code"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90a163d4-2335-4a77-8bc9-9f1bfd305069",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flight"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "flight_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flight_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"lang\": \"string\",\n    \"currency\": \"string\",\n    \"time\": 7213.520094573094,\n    \"id\": \"string\",\n    \"server\": \"string\",\n    \"host\": \"string\",\n    \"pid\": 4047,\n    \"version\": 7925,\n    \"method\": \"string\",\n    \"params\": {\n      \"key_0\": false,\n      \"key_1\": 8725.144677418599,\n      \"key_2\": 6020.903085828604\n    }\n  },\n  \"response\": {\n    \"hex\": \"string\",\n    \"reg_number\": \"string\",\n    \"flag\": \"string\",\n    \"lat\": 2012.0507276681499,\n    \"lng\": 6312.8289166183595,\n    \"alt\": 5032,\n    \"dir\": 1261.7502036348137,\n    \"speed\": 2584,\n    \"v_speed\": 1873.8789369468811,\n    \"squawk\": \"string\",\n    \"flight_number\": \"string\",\n    \"flight_iata\": \"string\",\n    \"flight_icao\": \"string\",\n    \"dep_iata\": \"string\",\n    \"dep_icao\": \"string\",\n    \"arr_iata\": \"string\",\n    \"arr_icao\": \"string\",\n    \"airline_iata\": \"string\",\n    \"airline_icao\": \"string\",\n    \"aircraft_icao\": \"string\",\n    \"updated\": 817,\n    \"status\": \"string\",\n    \"dep_terminal\": \"string\",\n    \"dep_gate\": \"string\",\n    \"dep_time\": \"string\",\n    \"dep_time_utc\": \"string\",\n    \"dep_estimated\": \"string\",\n    \"dep_estimated_utc\": \"string\",\n    \"dep_actual\": \"string\",\n    \"dep_actual_utc\": \"string\",\n    \"arr_terminal\": \"string\",\n    \"arr_gate\": \"string\",\n    \"arr_baggage\": \"string\",\n    \"arr_time\": \"string\",\n    \"arr_time_utc\": \"string\",\n    \"arr_estimated\": \"string\",\n    \"arr_estimated_utc\": \"string\",\n    \"arr_actual\": \"string\",\n    \"arr_actual_utc\": \"string\",\n    \"cs_airline_iata\": \"string\",\n    \"cs_flight_iata\": \"string\",\n    \"cs_flight_number\": \"string\",\n    \"duration\": 1549,\n    \"delayed\": 428,\n    \"dep_delayed\": 7024,\n    \"arr_delayed\": 4069\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b1483439-de33-4a16-ad2e-aa908cb951e3",
+              "name": "Bad request — missing or invalid parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flight"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "flight_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flight_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7917fcf7-05a8-4ae2-9fce-ba329b49f954",
+              "name": "Unauthorized — missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flight"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "flight_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flight_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "680c2646-d364-42e1-81d3-be507904ec58",
+              "name": "Forbidden — plan limit reached or feature not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flight"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "flight_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flight_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e00cf5a2-14ad-4333-8425-a56960613564",
+              "name": "Too many requests — rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flight"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "flight_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flight_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6b2c19fc-19fc-47f7-952c-0ac5a72373a1",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flight"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "flight_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flight_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://airlabs.co/api/v9",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7737ac55-35da-4b4a-bc74-dbcc3d108f7b",
+    "name": "AirLabs Aviation Data Airlines Flight API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.\n\nContact Support:\n Name: AirLabs\n Email: info@airlabs.co",
+      "type": "text/plain"
+    }
+  }
+}

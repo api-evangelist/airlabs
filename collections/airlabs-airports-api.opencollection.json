@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AirLabs Aviation Data Airlines Airports API",
+    "version": "v9"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Airports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Airports database",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://airlabs.co/api/v9/airports",
+            "params": [
+              {
+                "name": "iata_code",
+                "value": "",
+                "type": "query",
+                "description": "Airport IATA code"
+              },
+              {
+                "name": "icao_code",
+                "value": "",
+                "type": "query",
+                "description": "Airport ICAO code"
+              },
+              {
+                "name": "airport_iata",
+                "value": "",
+                "type": "query",
+                "description": "Alias for iata_code"
+              },
+              {
+                "name": "airport_icao",
+                "value": "",
+                "type": "query",
+                "description": "Alias for icao_code"
+              },
+              {
+                "name": "city_code",
+                "value": "",
+                "type": "query",
+                "description": "City IATA code"
+              },
+              {
+                "name": "country_code",
+                "value": "",
+                "type": "query",
+                "description": "Country ISO 2 code"
+              },
+              {
+                "name": "_fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of response fields to return"
+              },
+              {
+                "name": "_limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return"
+              }
+            ]
+          },
+          "docs": "Returns airports from the database."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

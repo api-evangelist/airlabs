@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AirLabs Aviation Data Airlines API",
+    "version": "v9"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Airlines",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Airlines database",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://airlabs.co/api/v9/airlines",
+            "params": [
+              {
+                "name": "iata_code",
+                "value": "",
+                "type": "query",
+                "description": "Airline IATA code"
+              },
+              {
+                "name": "icao_code",
+                "value": "",
+                "type": "query",
+                "description": "Airline ICAO code"
+              },
+              {
+                "name": "airline_iata",
+                "value": "",
+                "type": "query",
+                "description": "Alias for iata_code"
+              },
+              {
+                "name": "airline_icao",
+                "value": "",
+                "type": "query",
+                "description": "Alias for icao_code"
+              },
+              {
+                "name": "_fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of response fields to return"
+              },
+              {
+                "name": "_limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return"
+              }
+            ]
+          },
+          "docs": "Returns airlines from the database."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

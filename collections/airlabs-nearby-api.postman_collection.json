@@ -1,0 +1,475 @@
+{
+  "item": [
+    {
+      "id": "d6992da2-cb7f-4b01-a035-3c86b918e73f",
+      "name": "Nearby",
+      "description": {
+        "content": "Geographic airport lookup",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c2a7f97b-16f4-4a18-916b-14638f69a687",
+          "name": "Nearby airports",
+          "request": {
+            "name": "Nearby airports",
+            "description": {
+              "content": "Returns airports near the specified coordinates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "nearby"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lat",
+                  "value": "<float>",
+                  "description": "(Required) Latitude in decimal degrees"
+                },
+                {
+                  "disabled": false,
+                  "key": "lng",
+                  "value": "<float>",
+                  "description": "(Required) Longitude in decimal degrees"
+                },
+                {
+                  "disabled": false,
+                  "key": "distance",
+                  "value": "<integer>",
+                  "description": "Radius distance in km (default 100)"
+                },
+                {
+                  "disabled": false,
+                  "key": "_fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of response fields to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "_limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of results to return"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8318946b-4437-44ea-b836-7a77a4b8cf40",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nearby"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "lng",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "distance",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"lang\": \"string\",\n    \"currency\": \"string\",\n    \"time\": 8570.056377062007,\n    \"id\": \"string\",\n    \"server\": \"string\",\n    \"host\": \"string\",\n    \"pid\": 6442,\n    \"version\": 2690,\n    \"method\": \"string\",\n    \"params\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"response\": [\n    {\n      \"name\": \"string\",\n      \"iata_code\": \"string\",\n      \"icao_code\": \"string\",\n      \"lat\": 7980.974093109366,\n      \"lng\": 6903.864456032324,\n      \"alt\": 9943,\n      \"city\": \"string\",\n      \"city_code\": \"string\",\n      \"country_code\": \"string\",\n      \"country\": \"string\",\n      \"timezone\": \"string\",\n      \"distance\": 677.2538029025666\n    },\n    {\n      \"name\": \"string\",\n      \"iata_code\": \"string\",\n      \"icao_code\": \"string\",\n      \"lat\": 8791.261812293886,\n      \"lng\": 9602.77476070551,\n      \"alt\": 2334,\n      \"city\": \"string\",\n      \"city_code\": \"string\",\n      \"country_code\": \"string\",\n      \"country\": \"string\",\n      \"timezone\": \"string\",\n      \"distance\": 5122.3140842889015\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "626767d8-c16a-494d-af6d-8ed7f0146aad",
+              "name": "Bad request — missing or invalid parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nearby"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "lng",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "distance",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13499d2b-ee85-4b60-9c3c-1fd2ec431f76",
+              "name": "Unauthorized — missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nearby"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "lng",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "distance",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "793683a2-c5ab-4c87-ad6c-484dd281318b",
+              "name": "Forbidden — plan limit reached or feature not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nearby"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "lng",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "distance",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b2bfcab5-633f-408c-ae33-d69737699b69",
+              "name": "Too many requests — rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nearby"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "lng",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "distance",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "11d74905-690c-4af6-9b6e-4458492750d6",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nearby"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "lng",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "distance",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://airlabs.co/api/v9",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "137f082a-6db0-4818-8bd0-259fbe5f82ee",
+    "name": "AirLabs Aviation Data Airlines Nearby API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.\n\nContact Support:\n Name: AirLabs\n Email: info@airlabs.co",
+      "type": "text/plain"
+    }
+  }
+}

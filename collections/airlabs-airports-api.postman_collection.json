@@ -1,0 +1,565 @@
+{
+  "item": [
+    {
+      "id": "0c0e94f8-ae0b-4508-af96-95f8689bcb57",
+      "name": "Airports",
+      "description": {
+        "content": "Airport reference data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "23ab755b-11c5-49c1-b2d8-0cd0f7749aad",
+          "name": "Airports database",
+          "request": {
+            "name": "Airports database",
+            "description": {
+              "content": "Returns airports from the database.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "airports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "iata_code",
+                  "value": "<string>",
+                  "description": "Airport IATA code"
+                },
+                {
+                  "disabled": false,
+                  "key": "icao_code",
+                  "value": "<string>",
+                  "description": "Airport ICAO code"
+                },
+                {
+                  "disabled": false,
+                  "key": "airport_iata",
+                  "value": "<string>",
+                  "description": "Alias for iata_code"
+                },
+                {
+                  "disabled": false,
+                  "key": "airport_icao",
+                  "value": "<string>",
+                  "description": "Alias for icao_code"
+                },
+                {
+                  "disabled": false,
+                  "key": "city_code",
+                  "value": "<string>",
+                  "description": "City IATA code"
+                },
+                {
+                  "disabled": false,
+                  "key": "country_code",
+                  "value": "<string>",
+                  "description": "Country ISO 2 code"
+                },
+                {
+                  "disabled": false,
+                  "key": "_fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of response fields to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "_limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of results to return"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74b39550-6f8f-400b-9896-ef812f46a029",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "airports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "iata_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "icao_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airport_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airport_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"lang\": \"string\",\n    \"currency\": \"string\",\n    \"time\": 8029.037713495838,\n    \"id\": \"string\",\n    \"server\": \"string\",\n    \"host\": \"string\",\n    \"pid\": 8820,\n    \"version\": 2859,\n    \"method\": \"string\",\n    \"params\": {\n      \"key_0\": 4375,\n      \"key_1\": true,\n      \"key_2\": true\n    }\n  },\n  \"response\": [\n    {\n      \"name\": \"string\",\n      \"iata_code\": \"string\",\n      \"icao_code\": \"string\",\n      \"lat\": 8100.609302745361,\n      \"lng\": 5439.938175178801,\n      \"alt\": 284,\n      \"city\": \"string\",\n      \"city_code\": \"string\",\n      \"un_locode\": \"string\",\n      \"timezone\": \"string\",\n      \"country_code\": \"string\",\n      \"phone\": \"string\",\n      \"website\": \"string\",\n      \"popularity\": 334,\n      \"is_major\": false,\n      \"slug\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"iata_code\": \"string\",\n      \"icao_code\": \"string\",\n      \"lat\": 9055.65379799214,\n      \"lng\": 2730.575379439928,\n      \"alt\": 1562,\n      \"city\": \"string\",\n      \"city_code\": \"string\",\n      \"un_locode\": \"string\",\n      \"timezone\": \"string\",\n      \"country_code\": \"string\",\n      \"phone\": \"string\",\n      \"website\": \"string\",\n      \"popularity\": 5635,\n      \"is_major\": true,\n      \"slug\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0983111d-a186-4284-9edc-2980e239bc11",
+              "name": "Bad request — missing or invalid parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "airports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "iata_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "icao_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airport_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airport_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c39c2ac6-21e6-43e6-ab81-d4beb715e918",
+              "name": "Unauthorized — missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "airports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "iata_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "icao_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airport_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airport_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cde0b529-b238-427c-be2b-fe5d33822fc5",
+              "name": "Forbidden — plan limit reached or feature not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "airports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "iata_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "icao_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airport_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airport_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ee57ea1b-fa7e-4da5-a618-8366733fdf4e",
+              "name": "Too many requests — rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "airports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "iata_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "icao_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airport_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airport_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "693092bb-c3e8-4327-a1eb-4ffcd14ff71c",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "airports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "iata_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "icao_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airport_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airport_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://airlabs.co/api/v9",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2912029d-7ba2-48af-8a37-16f8c9835130",
+    "name": "AirLabs Aviation Data Airlines Airports API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.\n\nContact Support:\n Name: AirLabs\n Email: info@airlabs.co",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,625 @@
+{
+  "item": [
+    {
+      "id": "f74c92ab-4ec3-4159-b555-d9aa309a50e1",
+      "name": "Delays",
+      "description": {
+        "content": "Currently delayed flights",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d496cb0c-ada0-48fc-8d6a-4e9a9c7336ae",
+          "name": "Delayed flights",
+          "request": {
+            "name": "Delayed flights",
+            "description": {
+              "content": "Returns currently delayed flights with optional filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "delays"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dep_iata",
+                  "value": "<string>",
+                  "description": "Departure airport IATA"
+                },
+                {
+                  "disabled": false,
+                  "key": "dep_icao",
+                  "value": "<string>",
+                  "description": "Departure airport ICAO"
+                },
+                {
+                  "disabled": false,
+                  "key": "arr_iata",
+                  "value": "<string>",
+                  "description": "Arrival airport IATA"
+                },
+                {
+                  "disabled": false,
+                  "key": "arr_icao",
+                  "value": "<string>",
+                  "description": "Arrival airport ICAO"
+                },
+                {
+                  "disabled": false,
+                  "key": "airline_iata",
+                  "value": "<string>",
+                  "description": "Airline IATA"
+                },
+                {
+                  "disabled": false,
+                  "key": "airline_icao",
+                  "value": "<string>",
+                  "description": "Airline ICAO"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Filter: departures or arrivals"
+                },
+                {
+                  "disabled": false,
+                  "key": "delay",
+                  "value": "<integer>",
+                  "description": "Minimum delay in minutes"
+                },
+                {
+                  "disabled": false,
+                  "key": "_fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of response fields to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "_limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of results to return"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f1b130f4-ec2e-4c3d-a053-74303b0bcd5c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "delays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dep_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dep_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "arr_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "arr_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "delay",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"lang\": \"string\",\n    \"currency\": \"string\",\n    \"time\": 6530.684374717176,\n    \"id\": \"string\",\n    \"server\": \"string\",\n    \"host\": \"string\",\n    \"pid\": 1440,\n    \"version\": 1203,\n    \"method\": \"string\",\n    \"params\": {\n      \"key_0\": \"string\",\n      \"key_1\": 2121.136483772819\n    }\n  },\n  \"response\": [\n    {\n      \"airline_iata\": \"string\",\n      \"airline_icao\": \"string\",\n      \"flight_iata\": \"string\",\n      \"flight_icao\": \"string\",\n      \"flight_number\": \"string\",\n      \"dep_iata\": \"string\",\n      \"dep_icao\": \"string\",\n      \"dep_terminal\": \"string\",\n      \"dep_gate\": \"string\",\n      \"dep_time\": \"string\",\n      \"dep_time_utc\": \"string\",\n      \"dep_estimated\": \"string\",\n      \"dep_estimated_utc\": \"string\",\n      \"dep_actual\": \"string\",\n      \"dep_actual_utc\": \"string\",\n      \"arr_iata\": \"string\",\n      \"arr_icao\": \"string\",\n      \"arr_terminal\": \"string\",\n      \"arr_gate\": \"string\",\n      \"arr_baggage\": \"string\",\n      \"arr_time\": \"string\",\n      \"arr_time_utc\": \"string\",\n      \"arr_estimated\": \"string\",\n      \"arr_estimated_utc\": \"string\",\n      \"arr_actual\": \"string\",\n      \"arr_actual_utc\": \"string\",\n      \"cs_airline_iata\": \"string\",\n      \"cs_flight_iata\": \"string\",\n      \"cs_flight_number\": \"string\",\n      \"status\": \"string\",\n      \"duration\": 492,\n      \"delayed\": 8968,\n      \"dep_delayed\": 4606,\n      \"arr_delayed\": 9076\n    },\n    {\n      \"airline_iata\": \"string\",\n      \"airline_icao\": \"string\",\n      \"flight_iata\": \"string\",\n      \"flight_icao\": \"string\",\n      \"flight_number\": \"string\",\n      \"dep_iata\": \"string\",\n      \"dep_icao\": \"string\",\n      \"dep_terminal\": \"string\",\n      \"dep_gate\": \"string\",\n      \"dep_time\": \"string\",\n      \"dep_time_utc\": \"string\",\n      \"dep_estimated\": \"string\",\n      \"dep_estimated_utc\": \"string\",\n      \"dep_actual\": \"string\",\n      \"dep_actual_utc\": \"string\",\n      \"arr_iata\": \"string\",\n      \"arr_icao\": \"string\",\n      \"arr_terminal\": \"string\",\n      \"arr_gate\": \"string\",\n      \"arr_baggage\": \"string\",\n      \"arr_time\": \"string\",\n      \"arr_time_utc\": \"string\",\n      \"arr_estimated\": \"string\",\n      \"arr_estimated_utc\": \"string\",\n      \"arr_actual\": \"string\",\n      \"arr_actual_utc\": \"string\",\n      \"cs_airline_iata\": \"string\",\n      \"cs_flight_iata\": \"string\",\n      \"cs_flight_number\": \"string\",\n      \"status\": \"string\",\n      \"duration\": 1694,\n      \"delayed\": 9614,\n      \"dep_delayed\": 8615,\n      \"arr_delayed\": 6964\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cb1e14d2-3751-417b-8102-8290daa30a27",
+              "name": "Bad request — missing or invalid parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "delays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dep_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dep_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "arr_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "arr_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "delay",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "08177d7c-cdaf-4ef8-a292-aecf6272f9dd",
+              "name": "Unauthorized — missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "delays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dep_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dep_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "arr_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "arr_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "delay",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bbb52b22-2354-457d-b692-3508aa1fd988",
+              "name": "Forbidden — plan limit reached or feature not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "delays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dep_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dep_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "arr_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "arr_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "delay",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d16e893-a4b5-4c89-b325-d87b273da1d9",
+              "name": "Too many requests — rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "delays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dep_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dep_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "arr_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "arr_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "delay",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1c0a4ca-c717-4eb4-ad8c-263c3987bf9d",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "delays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dep_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dep_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "arr_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "arr_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "delay",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://airlabs.co/api/v9",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8bfd2733-086f-49c5-b6b0-fb8a934de28c",
+    "name": "AirLabs Aviation Data Airlines Delays API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.\n\nContact Support:\n Name: AirLabs\n Email: info@airlabs.co",
+      "type": "text/plain"
+    }
+  }
+}

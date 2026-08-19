@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AirLabs Aviation Data Airlines Fleets API",
+    "version": "v9"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Fleets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Aircraft fleets database",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://airlabs.co/api/v9/fleets",
+            "params": [
+              {
+                "name": "airline_iata",
+                "value": "",
+                "type": "query",
+                "description": "Airline IATA code"
+              },
+              {
+                "name": "airline_icao",
+                "value": "",
+                "type": "query",
+                "description": "Airline ICAO code"
+              },
+              {
+                "name": "reg_number",
+                "value": "",
+                "type": "query",
+                "description": "Aircraft registration number"
+              },
+              {
+                "name": "hex",
+                "value": "",
+                "type": "query",
+                "description": "ICAO 24-bit address (hex)"
+              },
+              {
+                "name": "flag",
+                "value": "",
+                "type": "query",
+                "description": "Country ISO 2 code"
+              },
+              {
+                "name": "_fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of response fields to return"
+              },
+              {
+                "name": "_limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return"
+              }
+            ]
+          },
+          "docs": "Returns aircraft from the fleets database. At least one filter parameter is recommended."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

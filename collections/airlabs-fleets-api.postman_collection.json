@@ -1,0 +1,535 @@
+{
+  "item": [
+    {
+      "id": "c71b0fac-4a49-4ac9-a7a8-ceb24df6269d",
+      "name": "Fleets",
+      "description": {
+        "content": "Aircraft fleet records",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c2b81842-6ac4-443e-893c-be80dc31c347",
+          "name": "Aircraft fleets database",
+          "request": {
+            "name": "Aircraft fleets database",
+            "description": {
+              "content": "Returns aircraft from the fleets database. At least one filter parameter is recommended.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fleets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "airline_iata",
+                  "value": "<string>",
+                  "description": "Airline IATA code"
+                },
+                {
+                  "disabled": false,
+                  "key": "airline_icao",
+                  "value": "<string>",
+                  "description": "Airline ICAO code"
+                },
+                {
+                  "disabled": false,
+                  "key": "reg_number",
+                  "value": "<string>",
+                  "description": "Aircraft registration number"
+                },
+                {
+                  "disabled": false,
+                  "key": "hex",
+                  "value": "<string>",
+                  "description": "ICAO 24-bit address (hex)"
+                },
+                {
+                  "disabled": false,
+                  "key": "flag",
+                  "value": "<string>",
+                  "description": "Country ISO 2 code"
+                },
+                {
+                  "disabled": false,
+                  "key": "_fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of response fields to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "_limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of results to return"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e173a03b-6fd2-4316-b2fb-f8c7a89e1d05",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fleets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reg_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"lang\": \"string\",\n    \"currency\": \"string\",\n    \"time\": 2970.400275355479,\n    \"id\": \"string\",\n    \"server\": \"string\",\n    \"host\": \"string\",\n    \"pid\": 3421,\n    \"version\": 3003,\n    \"method\": \"string\",\n    \"params\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"response\": [\n    {\n      \"hex\": \"string\",\n      \"reg_number\": \"string\",\n      \"flag\": \"string\",\n      \"airline_iata\": \"string\",\n      \"airline_icao\": \"string\",\n      \"aircraft_iata\": \"string\",\n      \"aircraft_icao\": \"string\",\n      \"model\": \"string\",\n      \"manufacturer\": \"string\",\n      \"built_year\": 5649,\n      \"first_flight_date\": \"string\",\n      \"engines_count\": 985,\n      \"engines_type\": \"string\",\n      \"plane_age\": 4313.9173202841475,\n      \"plane_owner\": \"string\",\n      \"plane_status\": \"string\",\n      \"msn\": \"string\",\n      \"line_number\": \"string\",\n      \"num_seats\": 9050,\n      \"rollout_date\": \"string\",\n      \"delivery_date\": \"string\"\n    },\n    {\n      \"hex\": \"string\",\n      \"reg_number\": \"string\",\n      \"flag\": \"string\",\n      \"airline_iata\": \"string\",\n      \"airline_icao\": \"string\",\n      \"aircraft_iata\": \"string\",\n      \"aircraft_icao\": \"string\",\n      \"model\": \"string\",\n      \"manufacturer\": \"string\",\n      \"built_year\": 9340,\n      \"first_flight_date\": \"string\",\n      \"engines_count\": 8661,\n      \"engines_type\": \"string\",\n      \"plane_age\": 6939.075731714574,\n      \"plane_owner\": \"string\",\n      \"plane_status\": \"string\",\n      \"msn\": \"string\",\n      \"line_number\": \"string\",\n      \"num_seats\": 7026,\n      \"rollout_date\": \"string\",\n      \"delivery_date\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b1a070f0-7cf9-4509-9de5-c8179bb84118",
+              "name": "Bad request — missing or invalid parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fleets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reg_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e90ce958-e536-4ac6-8227-b34aacdde2ce",
+              "name": "Unauthorized — missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fleets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reg_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10629256-3f3f-4581-b18b-eb8d46bac125",
+              "name": "Forbidden — plan limit reached or feature not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fleets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reg_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e1bb9b3b-23ef-4649-a2b8-50ed9caf45b0",
+              "name": "Too many requests — rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fleets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reg_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fff4f98f-3695-4360-a58c-adc3e18bd3ba",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fleets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "airline_iata",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "airline_icao",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reg_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://airlabs.co/api/v9",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6157002c-1918-4afc-88ec-d0f0b7a31bf7",
+    "name": "AirLabs Aviation Data Airlines Fleets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.\n\nContact Support:\n Name: AirLabs\n Email: info@airlabs.co",
+      "type": "text/plain"
+    }
+  }
+}

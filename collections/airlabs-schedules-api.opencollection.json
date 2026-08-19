@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AirLabs Aviation Data Airlines Schedules API",
+    "version": "v9"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Schedules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Airport schedules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://airlabs.co/api/v9/schedules",
+            "params": [
+              {
+                "name": "dep_iata",
+                "value": "",
+                "type": "query",
+                "description": "Departure airport IATA"
+              },
+              {
+                "name": "dep_icao",
+                "value": "",
+                "type": "query",
+                "description": "Departure airport ICAO"
+              },
+              {
+                "name": "arr_iata",
+                "value": "",
+                "type": "query",
+                "description": "Arrival airport IATA"
+              },
+              {
+                "name": "arr_icao",
+                "value": "",
+                "type": "query",
+                "description": "Arrival airport ICAO"
+              },
+              {
+                "name": "airline_iata",
+                "value": "",
+                "type": "query",
+                "description": "Airline IATA"
+              },
+              {
+                "name": "airline_icao",
+                "value": "",
+                "type": "query",
+                "description": "Airline ICAO"
+              },
+              {
+                "name": "flight_iata",
+                "value": "",
+                "type": "query",
+                "description": "Flight IATA"
+              },
+              {
+                "name": "flight_icao",
+                "value": "",
+                "type": "query",
+                "description": "Flight ICAO"
+              },
+              {
+                "name": "flight_number",
+                "value": "",
+                "type": "query",
+                "description": "Flight number"
+              },
+              {
+                "name": "_fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of response fields to return"
+              },
+              {
+                "name": "_limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return"
+              }
+            ]
+          },
+          "docs": "Airport timetable — departures and arrivals. At least one of dep_iata, dep_icao, arr_iata, arr_icao is required."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
