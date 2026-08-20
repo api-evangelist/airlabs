@@ -29,6 +29,14 @@ tags:
   - Airports
   - Flight Tracking
   - Flight Status
+  - Real-Time Data
+tags_raw:
+  - Aviation
+  - Flights
+  - Airlines
+  - Airports
+  - Flight Tracking
+  - Flight Status
   - Real-time Data
 apis:
 - name: Airlabs Real-Time Flights API
@@ -40,6 +48,10 @@ apis:
   humanURL: https://airlabs.co/docs/flights
   baseURL: https://airlabs.co/api/v9
   tags:
+  - Real-Time
+  - Flight Tracking
+  - Aircraft Position
+  tags_raw:
   - Real-time
   - Flight Tracking
   - Aircraft Position
