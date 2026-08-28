@@ -3,6 +3,18 @@ description: Aviation data REST API providing real-time flight status, schedules
   routes, airports, airlines, aircraft data, and delays from 250+ airlines and 3,500+
   airports worldwide. Built by Data Products LTD, the platform covers approximately
   7,300 active flights at any given time.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
