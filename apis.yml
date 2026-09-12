@@ -336,6 +336,8 @@ apis:
   - type: OpenAPI
     url: openapi/airlabs-suggest-api-openapi.yml
 common:
+  - type: Website
+    url: https://www.airlabs.co/
   - type: AgenticAccess
     url: agentic-access/airlabs-agentic-access.yml
   - type: DomainSecurity
