@@ -80,6 +80,10 @@ apis:
   humanURL: https://airlabs.co/docs/schedules
   baseURL: https://airlabs.co/api/v9
   tags:
+  - Schedule
+  - Departures
+  - Arrivals
+  tags_raw:
   - Schedules
   - Departures
   - Arrivals
@@ -271,6 +275,8 @@ apis:
   humanURL: https://airlabs.co/docs/flights
   baseURL: https://airlabs.co/api/v9
   tags:
+  - Fleet
+  tags_raw:
   - Fleets
   properties:
   - type: OpenAPI
@@ -281,6 +287,8 @@ apis:
   humanURL: https://airlabs.co/docs/flights
   baseURL: https://airlabs.co/api/v9
   tags:
+  - Flights
+  tags_raw:
   - Flight
   properties:
   - type: OpenAPI
@@ -321,6 +329,8 @@ apis:
   humanURL: https://airlabs.co/docs/flights
   baseURL: https://airlabs.co/api/v9
   tags:
+  - Schedule
+  tags_raw:
   - Schedules
   properties:
   - type: OpenAPI
