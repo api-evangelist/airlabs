@@ -1,18 +1,7 @@
 {
   "provider": "airlabs",
   "sources": [
-    "airlabs-airlines-api-openapi.yml",
-    "airlabs-airports-api-openapi.yml",
-    "airlabs-alert-api-openapi.yml",
-    "airlabs-cities-api-openapi.yml",
-    "airlabs-delays-api-openapi.yml",
-    "airlabs-fleets-api-openapi.yml",
-    "airlabs-flight-api-openapi.yml",
-    "airlabs-flights-api-openapi.yml",
-    "airlabs-nearby-api-openapi.yml",
-    "airlabs-routes-api-openapi.yml",
-    "airlabs-schedules-api-openapi.yml",
-    "airlabs-suggest-api-openapi.yml"
+    "_original/openapi.yaml"
   ],
   "outputs": [
     "airlabs-airlines-api-openapi.yml",
@@ -31,6 +20,23 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "airlabs-airlines-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "airlabs-airports-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "airlabs-alert-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "airlabs-cities-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "airlabs-delays-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "airlabs-fleets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "airlabs-flight-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "airlabs-flights-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "airlabs-nearby-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "airlabs-routes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "airlabs-schedules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "airlabs-suggest-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

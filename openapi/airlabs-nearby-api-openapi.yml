@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: AirLabs Aviation Data Airlines Nearby API
+  title: AirLabs Aviation Data Nearby API
   description: Real-time global flight tracking, airport schedules, flight delays, airline and airport databases, aircraft fleets, routes, nearby airports, and autocomplete suggestions. All responses are JSON wrapped in a `{request, response}` envelope. Authentication via `api_key` query parameter.
   version: v9
   termsOfService: https://airlabs.co/terms
@@ -114,15 +114,6 @@ components:
         params:
           type: object
           additionalProperties: true
-    NearbyResponse:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RequestMeta'
-        response:
-          type: array
-          items:
-            $ref: '#/components/schemas/NearbyAirport'
     NearbyAirport:
       type: object
       properties:
@@ -165,6 +156,15 @@ components:
           type: number
           format: float
           description: Distance from provided coordinates (km)
+    NearbyResponse:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/NearbyAirport'
     Error:
       type: object
       properties:
@@ -178,6 +178,13 @@ components:
               type: string
               description: Error code
   parameters:
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
     LimitParam:
       name: _limit
       in: query
@@ -187,13 +194,6 @@ components:
         type: integer
         minimum: 1
         maximum: 1000
-    FieldsParam:
-      name: _fields
-      in: query
-      required: false
-      description: Comma-separated list of response fields to return
-      schema:
-        type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
