@@ -213,13 +213,6 @@ components:
               type: string
               description: Error code
   parameters:
-    FieldsParam:
-      name: _fields
-      in: query
-      required: false
-      description: Comma-separated list of response fields to return
-      schema:
-        type: string
     LimitParam:
       name: _limit
       in: query
@@ -229,6 +222,13 @@ components:
         type: integer
         minimum: 1
         maximum: 1000
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

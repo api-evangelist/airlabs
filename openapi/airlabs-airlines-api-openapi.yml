@@ -118,15 +118,6 @@ components:
         params:
           type: object
           additionalProperties: true
-    AirlinesResponse:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RequestMeta'
-        response:
-          type: array
-          items:
-            $ref: '#/components/schemas/Airline'
     Airline:
       type: object
       properties:
@@ -173,6 +164,15 @@ components:
         type:
           type: string
           description: Airline type (scheduled, charter, cargo)
+    AirlinesResponse:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/Airline'
     Error:
       type: object
       properties:
@@ -186,13 +186,6 @@ components:
               type: string
               description: Error code
   parameters:
-    FieldsParam:
-      name: _fields
-      in: query
-      required: false
-      description: Comma-separated list of response fields to return
-      schema:
-        type: string
     LimitParam:
       name: _limit
       in: query
@@ -202,6 +195,13 @@ components:
         type: integer
         minimum: 1
         maximum: 1000
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

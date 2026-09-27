@@ -142,27 +142,6 @@ components:
         params:
           type: object
           additionalProperties: true
-    RoutesResponse:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RequestMeta'
-        response:
-          type: array
-          items:
-            $ref: '#/components/schemas/Route'
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            message:
-              type: string
-              description: Error description
-            code:
-              type: string
-              description: Error code
     Route:
       type: object
       properties:
@@ -228,14 +207,28 @@ components:
         cs_flight_iata:
           type: string
           description: Codeshare flight IATA code
+    RoutesResponse:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/Route'
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
   parameters:
-    FieldsParam:
-      name: _fields
-      in: query
-      required: false
-      description: Comma-separated list of response fields to return
-      schema:
-        type: string
     LimitParam:
       name: _limit
       in: query
@@ -245,6 +238,13 @@ components:
         type: integer
         minimum: 1
         maximum: 1000
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
