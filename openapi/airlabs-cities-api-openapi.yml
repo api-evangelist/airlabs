@@ -81,6 +81,15 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    CitiesResponse:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/City'
     RequestMeta:
       type: object
       description: Echo of the request and processing metadata
@@ -106,15 +115,18 @@ components:
         params:
           type: object
           additionalProperties: true
-    CitiesResponse:
+    Error:
       type: object
       properties:
-        request:
-          $ref: '#/components/schemas/RequestMeta'
-        response:
-          type: array
-          items:
-            $ref: '#/components/schemas/City'
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
     City:
       type: object
       properties:
@@ -144,19 +156,14 @@ components:
         popularity:
           type: integer
           description: Popularity rank
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            message:
-              type: string
-              description: Error description
-            code:
-              type: string
-              description: Error code
   parameters:
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
     LimitParam:
       name: _limit
       in: query
@@ -166,13 +173,6 @@ components:
         type: integer
         minimum: 1
         maximum: 1000
-    FieldsParam:
-      name: _fields
-      in: query
-      required: false
-      description: Comma-separated list of response fields to return
-      schema:
-        type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
