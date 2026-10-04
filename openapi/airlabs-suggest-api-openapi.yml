@@ -75,6 +75,25 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    SuggestEnvelope:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          $ref: '#/components/schemas/SuggestResponse'
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
     SuggestResponse:
       type: object
       description: Grouped suggestion results
@@ -152,13 +171,6 @@ components:
               icao_code:
                 type: string
                 description: Airline ICAO code
-    SuggestEnvelope:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RequestMeta'
-        response:
-          $ref: '#/components/schemas/SuggestResponse'
     RequestMeta:
       type: object
       description: Echo of the request and processing metadata
@@ -184,26 +196,7 @@ components:
         params:
           type: object
           additionalProperties: true
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            message:
-              type: string
-              description: Error description
-            code:
-              type: string
-              description: Error code
   parameters:
-    FieldsParam:
-      name: _fields
-      in: query
-      required: false
-      description: Comma-separated list of response fields to return
-      schema:
-        type: string
     LimitParam:
       name: _limit
       in: query
@@ -213,6 +206,13 @@ components:
         type: integer
         minimum: 1
         maximum: 1000
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

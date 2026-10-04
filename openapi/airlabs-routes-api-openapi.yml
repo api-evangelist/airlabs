@@ -117,31 +117,6 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    RequestMeta:
-      type: object
-      description: Echo of the request and processing metadata
-      properties:
-        lang:
-          type: string
-        currency:
-          type: string
-        time:
-          type: number
-        id:
-          type: string
-        server:
-          type: string
-        host:
-          type: string
-        pid:
-          type: integer
-        version:
-          type: integer
-        method:
-          type: string
-        params:
-          type: object
-          additionalProperties: true
     RoutesResponse:
       type: object
       properties:
@@ -151,18 +126,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Route'
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            message:
-              type: string
-              description: Error description
-            code:
-              type: string
-              description: Error code
     Route:
       type: object
       properties:
@@ -228,14 +191,44 @@ components:
         cs_flight_iata:
           type: string
           description: Codeshare flight IATA code
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
+    RequestMeta:
+      type: object
+      description: Echo of the request and processing metadata
+      properties:
+        lang:
+          type: string
+        currency:
+          type: string
+        time:
+          type: number
+        id:
+          type: string
+        server:
+          type: string
+        host:
+          type: string
+        pid:
+          type: integer
+        version:
+          type: integer
+        method:
+          type: string
+        params:
+          type: object
+          additionalProperties: true
   parameters:
-    FieldsParam:
-      name: _fields
-      in: query
-      required: false
-      description: Comma-separated list of response fields to return
-      schema:
-        type: string
     LimitParam:
       name: _limit
       in: query
@@ -245,6 +238,13 @@ components:
         type: integer
         minimum: 1
         maximum: 1000
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

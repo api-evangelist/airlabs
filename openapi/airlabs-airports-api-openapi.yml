@@ -104,6 +104,23 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 components:
+  parameters:
+    LimitParam:
+      name: _limit
+      in: query
+      required: false
+      description: Maximum number of results to return
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 1000
+    FieldsParam:
+      name: _fields
+      in: query
+      required: false
+      description: Comma-separated list of response fields to return
+      schema:
+        type: string
   schemas:
     Airport:
       type: object
@@ -158,15 +175,18 @@ components:
         slug:
           type: string
           description: URL-friendly slug
-    AirportsResponse:
+    Error:
       type: object
       properties:
-        request:
-          $ref: '#/components/schemas/RequestMeta'
-        response:
-          type: array
-          items:
-            $ref: '#/components/schemas/Airport'
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
     RequestMeta:
       type: object
       description: Echo of the request and processing metadata
@@ -192,35 +212,15 @@ components:
         params:
           type: object
           additionalProperties: true
-    Error:
+    AirportsResponse:
       type: object
       properties:
-        error:
-          type: object
-          properties:
-            message:
-              type: string
-              description: Error description
-            code:
-              type: string
-              description: Error code
-  parameters:
-    FieldsParam:
-      name: _fields
-      in: query
-      required: false
-      description: Comma-separated list of response fields to return
-      schema:
-        type: string
-    LimitParam:
-      name: _limit
-      in: query
-      required: false
-      description: Maximum number of results to return
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 1000
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/Airport'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
