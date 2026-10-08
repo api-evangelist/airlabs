@@ -346,6 +346,10 @@ apis:
   - type: OpenAPI
     url: openapi/airlabs-suggest-api-openapi.yml
 common:
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
   - url: https://www.airlabs.co/blog/
     type: Blog
   - type: Website
