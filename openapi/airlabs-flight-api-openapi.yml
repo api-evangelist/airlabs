@@ -79,6 +79,18 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
     FlightDetail:
       type: object
       properties:
@@ -224,25 +236,6 @@ components:
         arr_delayed:
           type: integer
           description: Arrival delay in minutes
-    FlightResponse:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RequestMeta'
-        response:
-          $ref: '#/components/schemas/FlightDetail'
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            message:
-              type: string
-              description: Error description
-            code:
-              type: string
-              description: Error code
     RequestMeta:
       type: object
       description: Echo of the request and processing metadata
@@ -268,6 +261,13 @@ components:
         params:
           type: object
           additionalProperties: true
+    FlightResponse:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          $ref: '#/components/schemas/FlightDetail'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

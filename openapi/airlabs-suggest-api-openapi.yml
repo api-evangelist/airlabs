@@ -75,25 +75,6 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    SuggestEnvelope:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RequestMeta'
-        response:
-          $ref: '#/components/schemas/SuggestResponse'
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            message:
-              type: string
-              description: Error description
-            code:
-              type: string
-              description: Error code
     SuggestResponse:
       type: object
       description: Grouped suggestion results
@@ -196,6 +177,25 @@ components:
         params:
           type: object
           additionalProperties: true
+    SuggestEnvelope:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestMeta'
+        response:
+          $ref: '#/components/schemas/SuggestResponse'
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error description
+            code:
+              type: string
+              description: Error code
   parameters:
     LimitParam:
       name: _limit
