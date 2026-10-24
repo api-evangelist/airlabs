@@ -169,6 +169,10 @@ apis:
   humanURL: https://airlabs.co/docs/fleets
   baseURL: https://airlabs.co/api/v9
   tags:
+  - Fleet Management
+  - Aircraft
+  - Database
+  tags_raw:
   - Fleet
   - Aircraft
   - Database
@@ -275,7 +279,7 @@ apis:
   humanURL: https://airlabs.co/docs/flights
   baseURL: https://airlabs.co/api/v9
   tags:
-  - Fleet
+  - Fleet Management
   tags_raw:
   - Fleets
   properties:
