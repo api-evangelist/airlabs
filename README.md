@@ -64,49 +64,184 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Aviation data REST API providing real-time flight status, schedules, routes, airports, airlines, aircraft data, and delays from 250+ airlines and 3,500+ airports worldwide. Built by Data Products LTD.
+Aviation data REST API providing real-time flight status, schedules, routes, airports, airlines, aircraft data, and delays from 250+ airlines and 3,500+ airports worldwide. Built by Data Products LTD, the platform covers approximately 7,300 active flights at any given time.
 
-- **Human URL:** https://airlabs.co
-- **Base URL:** https://airlabs.co/api/v9
+**Areas:** Aviation · Flights · Airlines · Airports · Flight Tracking · Flight Status · Real-Time Data
 
-## Description
+## Airlabs on APIs.io
 
-Airlabs offers a comprehensive aviation data platform covering approximately 7,300 active flights at any given time. The API is versioned at v9 and supports JSON, XML, and CSV response formats. Authentication is via API key passed as a query parameter, with an optional temporary signature mechanism for production security.
+Everything profiled for Airlabs is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/airlabs/](https://apis.io/providers/airlabs/)** — or go straight to one of the APIs or properties below.
 
-## Links
+### APIs (23)
 
-- [Homepage](https://airlabs.co)
+- [Airlabs Real-Time Flights API](https://apis.io/apis/airlabs/airlabs-real-time-flights-api/) — Track live aircraft positions worldwide with latitude, longitude, altitude, speed, direction, and flight identifiers. Supports filtering by bounding box,…
+- [Airlabs Airport Schedules API](https://apis.io/apis/airlabs/airlabs-airport-schedules-api/) — Retrieve departure and arrival schedules for any airport including flight status, terminal and gate information, estimated and actual times, and delay…
+- [Airlabs Flight Information API](https://apis.io/apis/airlabs/airlabs-flight-information-api/) — Look up detailed information for a specific flight by IATA or ICAO code, combining schedule data, real-time position, and aircraft specifications into a…
+- [Airlabs Flight Delays API](https://apis.io/apis/airlabs/airlabs-flight-delays-api/) — Query flights exceeding a specified delay threshold (minimum 30 minutes) filtered by departure or arrival direction, designed for airport transfer services…
+- [Airlabs Airports Database API](https://apis.io/apis/airlabs/airlabs-airports-database-api/) — Access a comprehensive global airport database with IATA and ICAO codes, coordinates, elevation, runway count, timezone, city and country data, and social…
+- [Airlabs Airlines Database API](https://apis.io/apis/airlabs/airlabs-airlines-database-api/) — Look up airline information including IATA and ICAO codes, callsign, country, fleet size, average fleet age, safety data including accidents and crashes…
+- [Airlabs Routes Database API](https://apis.io/apis/airlabs/airlabs-routes-database-api/) — Query airline routes between airports with departure and arrival times in local and UTC, operating days of week, terminal information, flight duration, and…
+- [Airlabs Aircraft Fleet Database API](https://apis.io/apis/airlabs/airlabs-aircraft-fleet-database-api/) — Access global aircraft fleet data with registration numbers, ICAO hex codes, manufacturer serial numbers, aircraft type, engine count and type, build year,…
+- [Airlabs Cities Database API](https://apis.io/apis/airlabs/airlabs-cities-database-api/) — Retrieve city data including IATA city codes, coordinates, country, timezone, population, and multilingual names. Enables destination mapping and grouping…
+- [Airlabs NearBy Airports API](https://apis.io/apis/airlabs/airlabs-nearby-airports-api/) — Find airports and cities closest to given latitude and longitude coordinates within a specified kilometer radius, sorted by distance. Used for…
+- [Airlabs Name Suggestion API](https://apis.io/apis/airlabs/airlabs-name-suggestion-api/) — Autocomplete airport, city, and country search queries in any language and spelling variant. Returns matched airports, cities, and countries with IATA…
+- [Airlabs Airlines API](https://apis.io/apis/airlabs/airlabs-airlines-api/) — Airline reference data
+- [Airlabs Airports API](https://apis.io/apis/airlabs/airlabs-airports-api/) — Airport reference data
+- [Airlabs Alert API](https://apis.io/apis/airlabs/airlabs-alert-api/) — Flight monitoring
+- [Airlabs Cities API](https://apis.io/apis/airlabs/airlabs-cities-api/) — City reference data
+- [Airlabs Delays API](https://apis.io/apis/airlabs/airlabs-delays-api/) — Currently delayed flights
+- [Airlabs Fleets API](https://apis.io/apis/airlabs/airlabs-fleets-api/) — Aircraft fleet records
+- [Airlabs Flight API](https://apis.io/apis/airlabs/airlabs-flight-api/) — Single flight information
+- [Airlabs Flights API](https://apis.io/apis/airlabs/airlabs-flights-api/) — Real-time flight positions
+- [Airlabs Nearby API](https://apis.io/apis/airlabs/airlabs-nearby-api/) — Geographic airport lookup
+- [Airlabs Routes API](https://apis.io/apis/airlabs/airlabs-routes-api/) — Route reference data
+- [Airlabs Schedules API](https://apis.io/apis/airlabs/airlabs-schedules-api/) — Airport departures and arrivals
+- [Airlabs Suggest API](https://apis.io/apis/airlabs/airlabs-suggest-api/) — Autocomplete and search
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Airlabs Agentic Access](https://apis.io/agentic-access/airlabs/airlabs-agentic-access/)
+
+#### JSON Schema (6)
+
+The data models the API reads and writes.
+
+- [Airline](https://apis.io/schemas/airlabs/airline/)
+- [Airport](https://apis.io/schemas/airlabs/airport/)
+- [FleetAircraft](https://apis.io/schemas/airlabs/fleet-aircraft/)
+- [Flight](https://apis.io/schemas/airlabs/flight/)
+- [Route](https://apis.io/schemas/airlabs/route/)
+- [Schedule](https://apis.io/schemas/airlabs/schedule/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [context Context](https://apis.io/jsonld/airlabs/context/)
+
+#### Examples (5)
+
+Example requests and responses.
+
+- [Airlines Response](https://apis.io/examples/airlabs/airlines-response/)
+- [Airports Response](https://apis.io/examples/airlabs/airports-response/)
+- [Flights Response](https://apis.io/examples/airlabs/flights-response/)
+- [Nearby Response](https://apis.io/examples/airlabs/nearby-response/)
+- [Schedules Response](https://apis.io/examples/airlabs/schedules-response/)
+
+#### Collections (12)
+
+Postman and Open Collection request collections.
+
+- [AirLabs Aviation Data Airlines API](https://apis.io/collections/airlabs/open-airlabs-airlines-api/)
+- [AirLabs Aviation Data Airlines Airports API](https://apis.io/collections/airlabs/open-airlabs-airports-api/)
+- [AirLabs Aviation Data Airlines Alert API](https://apis.io/collections/airlabs/open-airlabs-alert-api/)
+- [AirLabs Aviation Data Airlines Cities API](https://apis.io/collections/airlabs/open-airlabs-cities-api/)
+- [AirLabs Aviation Data Airlines Delays API](https://apis.io/collections/airlabs/open-airlabs-delays-api/)
+- [AirLabs Aviation Data Airlines Fleets API](https://apis.io/collections/airlabs/open-airlabs-fleets-api/)
+- [AirLabs Aviation Data Airlines Flight API](https://apis.io/collections/airlabs/open-airlabs-flight-api/)
+- [AirLabs Aviation Data Airlines Flights API](https://apis.io/collections/airlabs/open-airlabs-flights-api/)
+- [AirLabs Aviation Data Airlines Nearby API](https://apis.io/collections/airlabs/open-airlabs-nearby-api/)
+- [AirLabs Aviation Data Airlines Routes API](https://apis.io/collections/airlabs/open-airlabs-routes-api/)
+- [AirLabs Aviation Data Airlines Schedules API](https://apis.io/collections/airlabs/open-airlabs-schedules-api/)
+- [AirLabs Aviation Data Airlines Suggest API](https://apis.io/collections/airlabs/open-airlabs-suggest-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Airlabs — jsonschema rules](https://apis.io/rules/airlabs/airlabs-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Airlabs Authentication](https://apis.io/security/airlabs/airlabs-authentication/)
+- [Airlabs Domain Security](https://apis.io/security/airlabs/airlabs-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Plans](https://apis.io/plans/airlabs/plans/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Rate Limits](https://apis.io/rate-limits/airlabs/rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Finops](https://apis.io/finops/airlabs/finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.airlabs.co/)
 - [Documentation](https://airlabs.co/docs)
-- [Pricing](https://airlabs.co/#Pricing)
-- [Status](https://airlabs.co/status)
-- [Terms of Service](https://airlabs.co/terms)
-- [Privacy Policy](https://airlabs.co/privacy-policy)
+- [Blog](https://www.airlabs.co/blog/)
+- [Terms of service](https://airlabs.co/terms)
+- [Privacy policy](https://airlabs.co/privacy-policy)
 
-## APIs
+## API Evangelist rating
 
-| API | Description |
-|-----|-------------|
-| [Real-Time Flights](https://airlabs.co/docs/flights) | Live aircraft positions worldwide |
-| [Airport Schedules](https://airlabs.co/docs/schedules) | Departure and arrival schedules |
-| [Flight Information](https://airlabs.co/docs/flight) | Single flight detail lookup |
-| [Flight Delays](https://airlabs.co/docs/delays) | Delayed flight queries |
-| [Airports Database](https://airlabs.co/docs/airports) | Global airport data |
-| [Airlines Database](https://airlabs.co/docs/airlines) | Airline information and safety data |
-| [Routes Database](https://airlabs.co/docs/routes) | Airline route schedules |
-| [Fleet Database](https://airlabs.co/docs/fleets) | Aircraft registration and specs |
-| [Cities Database](https://airlabs.co/docs/cities) | City and destination data |
-| [NearBy Airports](https://airlabs.co/docs/nearby) | Geolocation-based airport search |
-| [Name Suggestion](https://airlabs.co/docs/suggest) | Airport and city autocomplete |
+**Kin Score 30.5** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Pricing
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 53.8 |
+| Contract governance | 9.8 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 18.4 |
 
-| Plan | Monthly Cost | Query Allowance |
-|------|-------------|-----------------|
-| Free | $0 | Limited |
-| Starter | $19 | 10,000 queries |
-| Growth | $99 | 100,000 queries |
-| Scale | $499 | 1,000,000 queries |
+**Agent readiness 27.4** — agent-aware
 
-## Maintainers
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-**kin@apievangelist.com**
+**Regulatory alignment 20.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/airlabs/](https://apis.io/providers/airlabs/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Airlabs: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/airlabs/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
